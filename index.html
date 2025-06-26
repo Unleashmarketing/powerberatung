@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Consulting - Transforming Business with Low Code Automation</title>
+    <meta name="description" content="Power Consulting specializes in low-code automation solutions using Microsoft Power Platform. Transform your business processes with our expert consulting, ready-to-use tools, and comprehensive training.">
+    <meta name="keywords" content="power platform, low code automation, business process automation, microsoft power platform, power apps, power automate">
+    
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #007AFF;
+            --secondary-color: #5856D6;
+            --accent-color: #30D158;
+            --text-primary: #1D1D1F;
+            --text-secondary: #6E6E73;
+            --background-primary: #FFFFFF;
+            --background-secondary: #F5F5F7;
+            --background-tertiary: #FBFBFD;
+            --border-color: #E5E5E7;
+            --shadow-light: rgba(0, 0, 0, 0.08);
+            --shadow-medium: rgba(0, 0, 0, 0.12);
+            --gradient-primary: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+            --gradient-secondary: linear-gradient(135deg, #30D158 0%, #007AFF 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header Navigation - Apple Style */
+        .header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            height: 60px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .logo::before {
+            content: "⚡";
+            margin-right: 0.5rem;
+            font-size: 1.8rem;
+            filter: drop-shadow(0 0 8px rgba(0, 122, 255, 0.3));
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .contact-btn {
+            background: var(--gradient-primary);
+            color: white !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 4px 20px rgba(0, 122, 255, 0.25);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 30px rgba(0, 122, 255, 0.35);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-toggle span {
+            width: 20px;
+            height: 2px;
+            background: var(--text-primary);
+            margin: 2px 0;
+            transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-radius: 2px;
+        }
+
+        /* Hero Section - Apple Style */
+        .hero {
+            background: var(--background-tertiary);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(0, 122, 255, 0.05) 0%, transparent 70%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .cta-primary, .cta-secondary {
+            padding: 1rem 2.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            letter-spacing: -0.01em;
+        }
+
+        .cta-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 8px 30px rgba(0, 122, 255, 0.3);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 122, 255, 0.4);
+        }
+
+        .cta-secondary {
+            background: var(--background-primary);
+            color: var(--primary-color);
+            border: 2px solid var(--border-color);
+            box-shadow: 0 4px 20px var(--shadow-light);
+        }
+
+        .cta-secondary:hover {
+            background: var(--background-secondary);
+            transform: translateY(-1px);
+        }
+
+        /* Interactive Process Automation Planner */
+        .automation-planner {
+            background: var(--background-primary);
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .planner-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .automation-planner h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .automation-planner .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .planner-widget {
+            background: var(--background-secondary);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px var(--shadow-light);
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        .process-selector {
+            margin-bottom: 3rem;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .process-card {
+            background: var(--background-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .process-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--shadow-light);
+        }
+
+        .process-card.selected {
+            border-color: var(--primary-color);
+            background: rgba(0, 122, 255, 0.05);
+        }
+
+        .process-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .process-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .process-card .check-icon {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+        }
+
+        .process-card.selected .check-icon {
+            display: flex;
+        }
+
+        .company-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .input-group {
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 1rem;
+            background: var(--background-primary);
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1);
+        }
+
+        .recommendations {
+            background: var(--gradient-primary);
+            border-radius: 16px;
+            padding: 2.5rem;
+            color: white;
+            margin-top: 2rem;
+            display: none;
+        }
+
+        .recommendations.visible {
+            display: block;
+            animation: slideInUp 0.5s ease;
+        }
+
+        .recommendations h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .solution-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .solution-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .solution-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .solution-card .icon {
+            font-size: 1.2rem;
+        }
+
+        .solution-card p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+
+        .solution-card .benefit {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-section p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .demo-btn {
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .demo-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* About Section - Modern */
+        .about {
+            padding: 6rem 2rem;
+            background: var(--background-tertiary);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px var(--shadow-medium);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .founder-quote {
+            background: var(--background-primary);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .founder-quote p {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        .founder-quote .signature {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-style: normal;
+        }
+
+        /* Services Section - Cards */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--background-primary);
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--background-primary);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: left;
+            box-shadow: 0 10px 40px var(--shadow-light);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px var(--shadow-medium);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 2rem;
+            background: var(--gradient-primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .service-btn {
+            background: var(--text-primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .service-btn:hover {
+            background: var(--primary-color);
+            transform: translateY(-1px);
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 6rem 2rem;
+            background: var(--background-secondary);
+        }
+
+        .benefits-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--background-primary);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px var(--shadow-medium);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: var(--gradient-secondary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .benefit-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .benefit-item p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        }
+
+        .final-cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .final-cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .final-cta p {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .final-cta-btn {
+            background: white;
+            color: var(--primary-color);
+            padding: 1.2rem 3rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: inline-block;
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        .final-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        /* Scroll to Top */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 8px 30px rgba(0, 122, 255, 0.3);
+            z-index: 1000;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 122, 255, 0.4);
+        }
+
+        .scroll-to-top.visible {
+            display: flex;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: saturate(180%) blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 10px 40px var(--shadow-medium);
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.25rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .calculator-inputs {
+                grid-template-columns: 1fr;
+            }
+
+            .result-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading state */
+        .loading {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="loading">
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">POWER<span style="font-weight: 400; margin-left: 0.5rem;">consulting</span></div>
+            <ul class="nav-menu">
+                <li><a href="#services">Our Brands</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#automation-planner">Automation Planner</a></li>
+                <li><a href="#contact" class="contact-btn">Contact Us</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content animate-on-scroll">
+            <h1>The Power Platform</h1>
+            <h2>Transforming Business with Low Code Automation</h2>
+            <p class="hero-description">Innovative solutions for seamless process automation and data visualization. We help businesses leverage the Microsoft Power Platform to achieve unprecedented efficiency and growth.</p>
+            <div class="cta-buttons">
+                <a href="#automation-planner" class="cta-primary">Get Your Automation Plan</a>
+                <a href="#services" class="cta-secondary">Explore Solutions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Process Automation Planner -->
+    <section class="automation-planner" id="automation-planner">
+        <div class="planner-container">
+            <h2 class="animate-on-scroll">Process Automation Planner</h2>
+            <p class="subtitle animate-on-scroll">Get personalized Power Platform solutions for your specific business processes</p>
+            
+            <div class="planner-widget animate-on-scroll">
+                <div class="process-selector">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--text-primary); font-weight: 600;">Which processes are slowing down your business?</h3>
+                    <div class="process-grid">
+                        <div class="process-card" data-process="invoice">
+                            <div class="check-icon">✓</div>
+                            <h4>Invoice Processing</h4>
+                            <p>Manual invoice entry, approval workflows, payment tracking</p>
+                        </div>
+                        <div class="process-card" data-process="hr">
+                            <div class="check-icon">✓</div>
+                            <h4>HR & Onboarding</h4>
+                            <p>Employee requests, leave management, document collection</p>
+                        </div>
+                        <div class="process-card" data-process="inventory">
+                            <div class="check-icon">✓</div>
+                            <h4>Inventory Management</h4>
+                            <p>Stock tracking, reorder alerts, supplier communication</p>
+                        </div>
+                        <div class="process-card" data-process="sales">
+                            <div class="check-icon">✓</div>
+                            <h4>Sales Pipeline</h4>
+                            <p>Lead management, quote generation, customer follow-ups</p>
+                        </div>
+                        <div class="process-card" data-process="reporting">
+                            <div class="check-icon">✓</div>
+                            <h4>Data & Reporting</h4>
+                            <p>Manual report creation, data consolidation from multiple sources</p>
+                        </div>
+                        <div class="process-card" data-process="compliance">
+                            <div class="check-icon">✓</div>
+                            <h4>Compliance & Auditing</h4>
+                            <p>Document tracking, audit preparation, regulatory reporting</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="company-info">
+                    <div class="input-group">
+                        <label for="industry">Industry</label>
+                        <select id="industry">
+                            <option value="">Select Industry</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="retail">Retail</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="finance">Financial Services</option>
+                            <option value="construction">Construction</option>
+                            <option value="professional">Professional Services</option>
+                            <option value="education">Education</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="companySize">Company Size</label>
+                        <select id="companySize">
+                            <option value="">Select Size</option>
+                            <option value="small">1-50 employees</option>
+                            <option value="medium">51-250 employees</option>
+                            <option value="large">251-1000 employees</option>
+                            <option value="enterprise">1000+ employees</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="currentTools">Current Tools</label>
+                        <select id="currentTools">
+                            <option value="">Select Primary Tool</option>
+                            <option value="excel">Mostly Excel/Spreadsheets</option>
+                            <option value="basic">Basic Software Tools</option>
+                            <option value="mixed">Mix of Different Systems</option>
+                            <option value="advanced">Advanced ERP/CRM</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="urgency">Implementation Urgency</label>
+                        <select id="urgency">
+                            <option value="">Select Timeline</option>
+                            <option value="immediate">Within 1 month</option>
+                            <option value="short">1-3 months</option>
+                            <option value="medium">3-6 months</option>
+                            <option value="long">6+ months</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="recommendations" id="recommendations">
+                    <h3>🎯 Your Personalized Automation Roadmap</h3>
+                    <div class="solution-cards" id="solutionCards">
+                        <!-- Solutions will be populated by JavaScript -->
+                    </div>
+                    <div class="cta-section">
+                        <p><strong>Ready to see these solutions in action?</strong></p>
+                        <a href="#" class="demo-btn" onclick="requestDemo()">Schedule Free Demo →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-content animate-on-scroll">
+                <h2>Our Experts for Your Automation</h2>
+                <p>Our team is a dynamic blend of young, energetic, and multicultural professionals who bring a rich tapestry of experience from various economic sectors. We are passionate about leveraging low code automation to streamline business processes and visualize data effectively.</p>
+                <p>Our diverse backgrounds and collaborative spirit foster innovative solutions tailored to meet our clients' unique needs. As experts in low code automation, we are committed to delivering exceptional value and driving transformational change in the businesses we serve.</p>
+                
+                <div class="founder-quote">
+                    <p>"The Power Platform empowers employees to digitize their own workplace. This saves time and allows people to focus on value-generating activities instead of being stuck with time consuming, manual data entry and copy&paste."</p>
+                    <div class="signature">Paul Stierle, Founder and CEO</div>
+                </div>
+            </div>
+            <div class="about-image animate-on-scroll">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23007AFF'/%3E%3Cstop offset='100%25' stop-color='%235856D6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23bg)'/%3E%3Ccircle cx='200' cy='200' r='80' fill='rgba(255,255,255,0.2)' stroke='rgba(255,255,255,0.4)' stroke-width='2'/%3E%3Ctext x='200' y='220' text-anchor='middle' fill='white' font-size='60' font-family='Arial'%3E👨‍💼%3C/text%3E%3C/svg%3E" alt="Paul Stierle, Founder and CEO">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <h2 class="animate-on-scroll">Our Solutions</h2>
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">💬</div>
+                    <h3>Power Consulting & Development</h3>
+                    <p><strong>Custom Low Code Automation Solutions</strong><br>
+                    We provide consulting and development services for low code automation solutions, enhancing your business processes and visualizing your data with bespoke custom development.</p>
+                    <a href="#" class="service-btn">Learn More</a>
+                </div>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">🔧</div>
+                    <h3>Power Solutions</h3>
+                    <p><strong>Ready-to-Use Tools</strong><br>
+                    Free up valuable time for your employees with our pre-built tools. Developed with best practices and enriched by industry insights, these solutions are ready to deploy for immediate impact.</p>
+                    <a href="#" class="service-btn">Learn More</a>
+                </div>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">🎓</div>
+                    <h3>Power Academy</h3>
+                    <p><strong>Expert Training for Power Platform Mastery</strong><br>
+                    Our qualified Power Platform experts train your employees to utilize Power Platform effectively, enabling them to expand and optimize your automation solutions.</p>
+                    <a href="#" class="service-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="benefits-container">
+            <h2 class="animate-on-scroll">Why Choose Low-Code Automation?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Cost Efficiency</h3>
+                    <p>Reduce development costs by up to 70% while accelerating time-to-market. Low-code automation eliminates the need for extensive coding expertise, allowing your team to focus on strategic initiatives that drive business growth.</p>
+                </div>
+                
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Rapid Development</h3>
+                    <p>Deploy solutions 10x faster than traditional development. Our low-code approach enables rapid prototyping and deployment, helping you respond quickly to market changes and business opportunities.</p>
+                </div>
+                
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-icon">🔄</div>
+                    <h3>Enhanced Flexibility</h3>
+                    <p>Adapt and scale with ease. Low-code platforms enable non-technical users to modify applications, ensuring your solutions evolve with your business needs while maintaining operational excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="contact">
+        <div class="final-cta-container animate-on-scroll">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Unlock the power of low-code automation today. Contact us to discover how our solutions can drive innovation, reduce costs, and enhance your business agility.</p>
+            <a href="#" class="final-cta-btn" onclick="openContactModal()">Get Started →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Power Consulting. All rights reserved.</p>
+            <p>Ready for the information age</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Process Automation Planner Logic
+        const processData = {
+            invoice: {
+                name: "Invoice Processing",
+                solutions: [
+                    {
+                        tool: "Power Automate",
+                        icon: "🔄",
+                        description: "Automated invoice extraction from emails, OCR processing, and approval workflows",
+                        benefit: "Reduce processing time by 80%"
+                    },
+                    {
+                        tool: "Power Apps",
+                        icon: "📱",
+                        description: "Mobile app for managers to approve invoices on-the-go with photo capture",
+                        benefit: "Faster approvals anywhere"
+                    }
+                ]
+            },
+            hr: {
+                name: "HR & Onboarding",
+                solutions: [
+                    {
+                        tool: "Power Apps",
+                        icon: "👥",
+                        description: "Employee self-service portal for leave requests, expense claims, and document updates",
+                        benefit: "Reduce HR admin by 60%"
+                    },
+                    {
+                        tool: "Power Automate",
+                        icon: "📋",
+                        description: "Automated onboarding workflows with task assignments and progress tracking",
+                        benefit: "Streamlined new hire experience"
+                    }
+                ]
+            },
+            inventory: {
+                name: "Inventory Management",
+                solutions: [
+                    {
+                        tool: "Power BI",
+                        icon: "📊",
+                        description: "Real-time inventory dashboards with automated alerts for low stock levels",
+                        benefit: "Prevent stockouts & overstock"
+                    },
+                    {
+                        tool: "Power Apps",
+                        icon: "📦",
+                        description: "Barcode scanning app for instant inventory updates and tracking",
+                        benefit: "Real-time accuracy"
+                    }
+                ]
+            },
+            sales: {
+                name: "Sales Pipeline",
+                solutions: [
+                    {
+                        tool: "Power Apps",
+                        icon: "💼",
+                        description: "CRM app with lead scoring, opportunity tracking, and customer communication history",
+                        benefit: "Increase conversion rates"
+                    },
+                    {
+                        tool: "Power Automate",
+                        icon: "📧",
+                        description: "Automated follow-up sequences and quote generation based on customer interactions",
+                        benefit: "Never miss a follow-up"
+                    }
+                ]
+            },
+            reporting: {
+                name: "Data & Reporting",
+                solutions: [
+                    {
+                        tool: "Power BI",
+                        icon: "📈",
+                        description: "Automated dashboards connecting all your data sources with real-time insights",
+                        benefit: "Save 10+ hours weekly on reports"
+                    },
+                    {
+                        tool: "Power Automate",
+                        icon: "📅",
+                        description: "Scheduled report distribution to stakeholders with customized content",
+                        benefit: "Automated delivery & insights"
+                    }
+                ]
+            },
+            compliance: {
+                name: "Compliance & Auditing",
+                solutions: [
+                    {
+                        tool: "Power Apps",
+                        icon: "🛡️",
+                        description: "Digital audit trail system with document version control and approval chains",
+                        benefit: "100% audit readiness"
+                    },
+                    {
+                        tool: "Power Automate",
+                        icon: "⚠️",
+                        description: "Automated compliance monitoring with alerts for regulatory deadlines",
+                        benefit: "Never miss compliance dates"
+                    }
+                ]
+            }
+        };
+
+        let selectedProcesses = new Set();
+
+        function initProcessPlanner() {
+            // Add click handlers to process cards
+            document.querySelectorAll('.process-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const process = this.dataset.process;
+                    
+                    if (selectedProcesses.has(process)) {
+                        selectedProcesses.delete(process);
+                        this.classList.remove('selected');
+                    } else {
+                        selectedProcesses.add(process);
+                        this.classList.add('selected');
+                    }
+                    
+                    updateRecommendations();
+                });
+            });
+
+            // Add change handlers to dropdowns
+            ['industry', 'companySize', 'currentTools', 'urgency'].forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.addEventListener('change', updateRecommendations);
+                }
+            });
+        }
+
+        function updateRecommendations() {
+            const recommendations = document.getElementById('recommendations');
+            const solutionCards = document.getElementById('solutionCards');
+            
+            if (selectedProcesses.size === 0) {
+                recommendations.classList.remove('visible');
+                return;
+            }
+
+            // Get form values for personalization
+            const industry = document.getElementById('industry').value;
+            const companySize = document.getElementById('companySize').value;
+            const currentTools = document.getElementById('currentTools').value;
+            const urgency = document.getElementById('urgency').value;
+
+            // Generate solutions
+            let solutionsHTML = '';
+            selectedProcesses.forEach(processKey => {
+                const process = processData[processKey];
+                if (process) {
+                    process.solutions.forEach(solution => {
+                        solutionsHTML += `
+                            <div class="solution-card">
+                                <h4>
+                                    <span class="icon">${solution.icon}</span>
+                                    ${solution.tool} for ${process.name}
+                                </h4>
+                                <p>${solution.description}</p>
+                                <div class="benefit">${solution.benefit}</div>
+                            </div>
+                        `;
+                    });
+                }
+            });
+
+            // Add personalized recommendations based on company info
+            if (companySize === 'small') {
+                solutionsHTML += `
+                    <div class="solution-card">
+                        <h4><span class="icon">🚀</span>Quick Start Package</h4>
+                        <p>For smaller teams, we recommend starting with 1-2 key processes to maximize immediate impact and learning.</p>
+                        <div class="benefit">Faster implementation & ROI</div>
+                    </div>
+                `;
+            }
+
+            if (urgency === 'immediate') {
+                solutionsHTML += `
+                    <div class="solution-card">
+                        <h4><span class="icon">⚡</span>Rapid Deployment</h4>
+                        <p>Pre-built templates and accelerated implementation timeline to get you live within 2-4 weeks.</p>
+                        <div class="benefit">Live in under 1 month</div>
+                    </div>
+                `;
+            }
+
+            solutionCards.innerHTML = solutionsHTML;
+            recommendations.classList.add('visible');
+        }
+
+        function requestDemo() {
+            const selectedProcessList = Array.from(selectedProcesses).map(key => processData[key]?.name).join(', ');
+            const industry = document.getElementById('industry').value;
+            const companySize = document.getElementById('companySize').value;
+            
+            // Create personalized demo request
+            const demoData = {
+                processes: selectedProcessList,
+                industry: industry,
+                companySize: companySize,
+                timestamp: new Date().toISOString()
+            };
+
+            // Enhanced modal with personalized content
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                backdrop-filter: blur(15px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+            
+            const modalContent = document.createElement('div');
+            modalContent.style.cssText = `
+                background: white;
+                padding: 3rem;
+                border-radius: 20px;
+                max-width: 600px;
+                width: 90%;
+                text-align: left;
+                box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+                transform: scale(0.9);
+                transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            `;
+            
+            modalContent.innerHTML = `
+                <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--text-primary); text-align: center;">🎯 Personalized Demo Request</h3>
+                <div style="background: var(--background-secondary); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+                    <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Your Selected Processes:</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Focus Areas:</strong> ${selectedProcessList || 'General automation consultation'}</p>
+                    <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Industry:</strong> ${industry || 'Not specified'}</p>
+                    <p style="color: var(--text-secondary);"><strong>Company Size:</strong> ${companySize || 'Not specified'}</p>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem; text-align: center;">We'll prepare a customized demo showing exactly how Power Platform can transform these specific processes for your business.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="mailto:demo@power-consulting.com?subject=Demo Request - ${selectedProcessList}&body=Hi, I'm interested in a demo for the following processes: ${selectedProcessList}. Company details: ${industry} industry, ${companySize} size." 
+                       style="background: var(--gradient-primary); color: white; padding: 1rem 2rem; border-radius: 15px; text-decoration: none; font-weight: 600;">Schedule Demo</a>
+                    <button onclick="this.closest('[style*=fixed]').remove()" 
+                            style="background: var(--background-secondary); color: var(--text-primary); padding: 1rem 2rem; border-radius: 15px; border: none; font-weight: 600; cursor: pointer;">Close</button>
+                </div>
+            `;
+            
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+            
+            // Animate in
+            setTimeout(() => {
+                modal.style.opacity = '1';
+                modalContent.style.transform = 'scale(1)';
+            }, 10);
+            
+            // Close on background click
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.opacity = '0';
+                    modalContent.style.transform = 'scale(0.9)';
+                    setTimeout(() => modal.remove(), 300);
+                }
+            });
+        }
+
+        // Add event listeners to process planner
+        document.addEventListener('DOMContentLoaded', function() {
+            initProcessPlanner();
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            navMenu.classList.toggle('active');
+            toggle.classList.toggle('active');
+            
+            // Animate hamburger
+            const spans = toggle.querySelectorAll('span');
+            if (toggle.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        }
+
+        // Smooth Scrolling with easing
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Enhanced Scroll Animations with Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Add staggered animation for grid items
+                    if (entry.target.classList.contains('service-card') || 
+                        entry.target.classList.contains('benefit-item')) {
+                        const siblings = entry.target.parentElement.children;
+                        const index = Array.from(siblings).indexOf(entry.target);
+                        entry.target.style.transitionDelay = `${index * 0.1}s`;
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Enhanced Header Scroll Effect
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            const scrollTop = window.pageYOffset;
+            
+            // Header appearance
+            if (scrollTop > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.9)';
+                header.style.borderBottom = '1px solid rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.8)';
+                header.style.borderBottom = '1px solid var(--border-color)';
+            }
+
+            // Hide/show header on scroll
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrollTop;
+
+            // Scroll to top button
+            const scrollBtn = document.querySelector('.scroll-to-top');
+            if (scrollTop > 500) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        // Scroll to Top Function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Contact Modal (Enhanced)
+        function openContactModal() {
+            // Create modal overlay
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(10px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+            
+            const modalContent = document.createElement('div');
+            modalContent.style.cssText = `
+                background: white;
+                padding: 3rem;
+                border-radius: 20px;
+                max-width: 500px;
+                width: 90%;
+                text-align: center;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                transform: scale(0.9);
+                transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            `;
+            
+            modalContent.innerHTML = `
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">Get Started Today</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">Ready to transform your business with low-code automation? Let's discuss your needs.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="mailto:contact@power-consulting.com" style="background: var(--gradient-primary); color: white; padding: 1rem 2rem; border-radius: 15px; text-decoration: none; font-weight: 600;">Send Email</a>
+                    <button onclick="this.closest('[style*=fixed]').remove()" style="background: var(--background-secondary); color: var(--text-primary); padding: 1rem 2rem; border-radius: 15px; border: none; font-weight: 600; cursor: pointer;">Close</button>
+                </div>
+            `;
+            
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+            
+            // Animate in
+            setTimeout(() => {
+                modal.style.opacity = '1';
+                modalContent.style.transform = 'scale(1)';
+            }, 10);
+            
+            // Close on background click
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.opacity = '0';
+                    modalContent.style.transform = 'scale(0.9)';
+                    setTimeout(() => modal.remove(), 300);
+                }
+            });
+        }
+
+        // Page Loading Animation
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+            
+            // Trigger initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.hero .animate-on-scroll').forEach(el => {
+                    el.classList.add('visible');
+                });
+            }, 200);
+        });
+
+        // Performance optimizations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Preload critical resources
+            const link1 = document.createElement('link');
+            link1.rel = 'preconnect';
+            link1.href = 'https://fonts.googleapis.com';
+            document.head.appendChild(link1);
+
+            // Add CSS custom properties for dynamic theming
+            document.documentElement.style.setProperty('--scroll-progress', '0%');
+            
+            // Parallax effect for hero
+            let ticking = false;
+            function updateParallax() {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+                const hero = document.querySelector('.hero');
+                if (hero && scrolled < window.innerHeight) {
+                    hero.style.transform = `translate3d(0, ${rate}px, 0)`;
+                }
+                ticking = false;
+            }
+            
+            function requestParallaxUpdate() {
+                if (!ticking) {
+                    requestAnimationFrame(updateParallax);
+                    ticking = true;
+                }
+            }
+            
+            window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+        });
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.querySelector('[style*="position: fixed"]');
+                if (modal) modal.remove();
+                
+                const mobileMenu = document.querySelector('.nav-menu.active');
+                if (mobileMenu) toggleMobileMenu();
+            }
+        });
+    </script>
+
+    <!-- Schema.org structured data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Power Consulting",
+        "description": "Transforming business with low code automation using Microsoft Power Platform",
+        "url": "https://power-consulting.com",
+        "logo": "https://power-consulting.com/logo.png",
+        "founder": {
+            "@type": "Person",
+            "name": "Paul Stierle"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "DE"
+        },
+        "serviceArea": {
+            "@type": "Place",
+            "name": "Global"
+        },
+        "services": [
+            "Low Code Automation Consulting",
+            "Microsoft Power Platform Development", 
+            "Business Process Automation",
+            "Power Platform Training"
+        ],
+        "offers": {
+            "@type": "Service",
+            "name": "ROI Calculator",
+            "description": "Interactive tool to calculate potential savings from automation"
+        }
+    }
+    </script>
+</body>
+</html>

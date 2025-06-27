@@ -595,9 +595,7 @@
         }
 
         .about-right {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
+            position: relative;
         }
 
         .about-image {
@@ -605,11 +603,12 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 60px var(--shadow-medium);
+            z-index: 1;
         }
 
         .about-image img {
             width: 100%;
-            height: 300px;
+            height: 350px;
             object-fit: cover;
         }
 
@@ -617,8 +616,15 @@
             background: var(--background-primary);
             padding: 2rem;
             border-radius: 16px;
-            box-shadow: 0 10px 30px var(--shadow-light);
+            box-shadow: 0 15px 40px var(--shadow-medium);
             border-left: 4px solid var(--primary-color);
+            position: relative;
+            margin-top: -60px;
+            margin-left: 30px;
+            margin-right: -15px;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .founder-quote p {
@@ -682,6 +688,9 @@
             border: 1px solid var(--border-color);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .service-card::before {
@@ -709,6 +718,7 @@
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
+            flex-shrink: 0;
         }
 
         .service-icon img {
@@ -723,6 +733,7 @@
             color: var(--text-primary);
             font-weight: 600;
             letter-spacing: -0.01em;
+            flex-shrink: 0;
         }
 
         .service-card p {
@@ -730,6 +741,7 @@
             line-height: 1.6;
             margin-bottom: 2rem;
             font-weight: 400;
+            flex-grow: 1;
         }
 
         .service-btn {
@@ -742,6 +754,8 @@
             font-size: 0.9rem;
             transition: all 0.2s ease;
             display: inline-block;
+            align-self: flex-start;
+            margin-top: auto;
         }
 
         .service-btn:hover {
@@ -1168,6 +1182,16 @@
 
                 .about-right {
                     order: -1;
+                }
+
+                .founder-quote {
+                    margin-top: -30px;
+                    margin-left: 15px;
+                    margin-right: -8px;
+                }
+
+                .about-image img {
+                    height: 280px;
                 }
             }
 

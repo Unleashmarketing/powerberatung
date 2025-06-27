@@ -594,6 +594,12 @@
             font-weight: 400;
         }
 
+        .about-right {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
         .about-image {
             position: relative;
             border-radius: 20px;
@@ -603,7 +609,7 @@
 
         .about-image img {
             width: 100%;
-            height: 400px;
+            height: 300px;
             object-fit: cover;
         }
 
@@ -611,7 +617,6 @@
             background: var(--background-primary);
             padding: 2rem;
             border-radius: 16px;
-            margin-top: 2rem;
             box-shadow: 0 10px 30px var(--shadow-light);
             border-left: 4px solid var(--primary-color);
         }
@@ -704,6 +709,12 @@
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
+        }
+
+        .service-icon img {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0) invert(1);
         }
 
         .service-card h3 {
@@ -801,6 +812,12 @@
             align-items: center;
             justify-content: center;
             font-size: 2rem;
+        }
+
+        .benefit-icon img {
+            width: 40px;
+            height: 40px;
+            filter: brightness(0) invert(1);
         }
 
         .benefit-item h3 {
@@ -1044,7 +1061,7 @@
             background: white;
             color: var(--primary-color);
             padding: 1.2rem 3rem;
-            border-radius: 25px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.1rem;
@@ -1143,9 +1160,15 @@
                 height: 1.1em;
             }
 
-            .about-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
+            @media (max-width: 768px) {
+                .about-container {
+                    grid-template-columns: 1fr;
+                    gap: 3rem;
+                }
+
+                .about-right {
+                    order: -1;
+                }
             }
 
             .cta-buttons {
@@ -1368,15 +1391,17 @@
             <div class="about-content animate-on-scroll">
                 <h2>Our Experts for Your Automation</h2>
                 <p>Our team is a dynamic blend of young, energetic, and multicultural professionals who bring a rich tapestry of experience from various economic sectors. We are passionate about leveraging low code automation to streamline business processes and visualize data effectively.</p>
-                <p>Our diverse backgrounds and collaborative spirit foster innovative solutions tailored to meet our clients' unique needs. As experts in low code automation, we are committed to delivering exceptional value and driving transformational change in the businesses we serve.</p>
+                <p>Our diverse backgrounds and collaborative spirit foster innovative solutions tailored to meet our clients' unique needs.</p>
+            </div>
+            <div class="about-right animate-on-scroll">
+                <div class="about-image">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23007AFF'/%3E%3Cstop offset='100%25' stop-color='%235856D6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23bg)'/%3E%3Ccircle cx='200' cy='200' r='80' fill='rgba(255,255,255,0.2)' stroke='rgba(255,255,255,0.4)' stroke-width='2'/%3E%3Ctext x='200' y='220' text-anchor='middle' fill='white' font-size='60' font-family='Arial'%3E👨‍💼%3C/text%3E%3C/svg%3E" alt="Paul Stierle, Founder and CEO">
+                </div>
                 
                 <div class="founder-quote">
                     <p>"The Power Platform empowers employees to digitize their own workplace. This saves time and allows people to focus on value-generating activities instead of being stuck with time consuming, manual data entry and copy&paste."</p>
                     <div class="signature">Paul Stierle, Founder and CEO</div>
                 </div>
-            </div>
-            <div class="about-image animate-on-scroll">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23007AFF'/%3E%3Cstop offset='100%25' stop-color='%235856D6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23bg)'/%3E%3Ccircle cx='200' cy='200' r='80' fill='rgba(255,255,255,0.2)' stroke='rgba(255,255,255,0.4)' stroke-width='2'/%3E%3Ctext x='200' y='220' text-anchor='middle' fill='white' font-size='60' font-family='Arial'%3E👨‍💼%3C/text%3E%3C/svg%3E" alt="Paul Stierle, Founder and CEO">
             </div>
         </div>
     </section>
@@ -1387,7 +1412,9 @@
             <h2 class="animate-on-scroll">Our Solutions</h2>
             <div class="services-grid">
                 <div class="service-card animate-on-scroll">
-                    <div class="service-icon">💬</div>
+                    <div class="service-icon">
+                        <img src="icon-consulting.svg" alt="Consulting Icon">
+                    </div>
                     <h3>Power Consulting & Development</h3>
                     <p><strong>Custom Low Code Automation Solutions</strong><br>
                     We provide consulting and development services for low code automation solutions, enhancing your business processes and visualizing your data with bespoke custom development.</p>
@@ -1395,7 +1422,9 @@
                 </div>
                 
                 <div class="service-card animate-on-scroll">
-                    <div class="service-icon">🔧</div>
+                    <div class="service-icon">
+                        <img src="icon-solutions.svg" alt="Solutions Icon">
+                    </div>
                     <h3>Power Solutions</h3>
                     <p><strong>Ready-to-Use Tools</strong><br>
                     Free up valuable time for your employees with our pre-built tools. Developed with best practices and enriched by industry insights, these solutions are ready to deploy for immediate impact.</p>
@@ -1403,7 +1432,9 @@
                 </div>
                 
                 <div class="service-card animate-on-scroll">
-                    <div class="service-icon">🎓</div>
+                    <div class="service-icon">
+                        <img src="icon-academy.svg" alt="Academy Icon">
+                    </div>
                     <h3>Power Academy</h3>
                     <p><strong>Expert Training for Power Platform Mastery</strong><br>
                     Our qualified Power Platform experts train your employees to utilize Power Platform effectively, enabling them to expand and optimize your automation solutions.</p>
@@ -1419,19 +1450,25 @@
             <h2 class="animate-on-scroll">Why Choose Low-Code Automation?</h2>
             <div class="benefits-grid">
                 <div class="benefit-item animate-on-scroll">
-                    <div class="benefit-icon">💰</div>
+                    <div class="benefit-icon">
+                        <img src="icon-cost.svg" alt="Cost Efficiency Icon">
+                    </div>
                     <h3>Cost Efficiency</h3>
                     <p>Reduce development costs by up to 70% while accelerating time-to-market. Low-code automation eliminates the need for extensive coding expertise, allowing your team to focus on strategic initiatives that drive business growth.</p>
                 </div>
                 
                 <div class="benefit-item animate-on-scroll">
-                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-icon">
+                        <img src="icon-speed.svg" alt="Rapid Development Icon">
+                    </div>
                     <h3>Rapid Development</h3>
                     <p>Deploy solutions 10x faster than traditional development. Our low-code approach enables rapid prototyping and deployment, helping you respond quickly to market changes and business opportunities.</p>
                 </div>
                 
                 <div class="benefit-item animate-on-scroll">
-                    <div class="benefit-icon">🔄</div>
+                    <div class="benefit-icon">
+                        <img src="icon-flexibility.svg" alt="Enhanced Flexibility Icon">
+                    </div>
                     <h3>Enhanced Flexibility</h3>
                     <p>Adapt and scale with ease. Low-code platforms enable non-technical users to modify applications, ensuring your solutions evolve with your business needs while maintaining operational excellence.</p>
                 </div>

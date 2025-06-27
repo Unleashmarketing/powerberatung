@@ -303,9 +303,20 @@
 
         /* Interactive Process Automation Planner */
         .automation-planner {
-            background: var(--background-primary);
+            background: linear-gradient(135deg, #ffffff 0%, #fafbff 50%, #f6f8ff 100%);
             padding: 6rem 2rem;
             position: relative;
+            overflow: hidden;
+        }
+
+        .automation-planner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 80% 30%, rgba(0, 122, 255, 0.04) 0%, transparent 60%);
         }
 
         .planner-container {
@@ -544,7 +555,18 @@
         /* About Section - Modern */
         .about {
             padding: 6rem 2rem;
-            background: var(--background-tertiary);
+            background: linear-gradient(135deg, #fefefe 0%, #f1f5f9 50%, #e2e8f0 100%);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 20% 50%, rgba(48, 209, 88, 0.05) 0%, transparent 50%);
         }
 
         .about-container {
@@ -611,7 +633,18 @@
         /* Services Section - Cards */
         .services {
             padding: 6rem 2rem;
-            background: var(--background-primary);
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 50%, #f3f4f6 100%);
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 70% 80%, rgba(88, 86, 214, 0.06) 0%, transparent 50%);
         }
 
         .services-container {
@@ -708,7 +741,19 @@
         /* Benefits Section */
         .benefits {
             padding: 6rem 2rem;
-            background: var(--background-secondary);
+            background: linear-gradient(135deg, #f8faff 0%, #e8f3ff 50%, #f0f9ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 30% 20%, rgba(0, 122, 255, 0.08) 0%, transparent 50%);
         }
 
         .benefits-container {
@@ -771,6 +816,185 @@
             line-height: 1.7;
             font-size: 1rem;
             font-weight: 400;
+        }
+
+        /* FAQ Section - Apple Style */
+        .faq {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faq::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 30%, rgba(88, 86, 214, 0.03) 0%, transparent 70%);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .faq-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 4rem;
+            font-weight: 400;
+        }
+
+        .faq-list {
+            background: var(--background-primary);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px var(--shadow-light);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem 2.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.4;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .faq-question:hover {
+            background: var(--background-secondary);
+        }
+
+        .faq-item.active .faq-question {
+            background: rgba(0, 122, 255, 0.03);
+            color: var(--primary-color);
+        }
+
+        .faq-arrow {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--background-secondary);
+            border-radius: 50%;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .faq-item.active .faq-arrow {
+            background: var(--primary-color);
+            transform: rotate(180deg);
+        }
+
+        .faq-arrow::after {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-right: 2px solid var(--text-secondary);
+            border-bottom: 2px solid var(--text-secondary);
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-arrow::after {
+            border-color: white;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: var(--background-primary);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer-content {
+            padding: 0 2.5rem 2rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .faq-contact {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2.5rem;
+            background: rgba(0, 122, 255, 0.03);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 122, 255, 0.1);
+        }
+
+        .faq-contact h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-contact p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .faq-contact-btn {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 20px rgba(0, 122, 255, 0.25);
+        }
+
+        .faq-contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 122, 255, 0.35);
         }
 
         /* Final CTA */
@@ -1215,6 +1439,87 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="faq-container">
+            <h2 class="animate-on-scroll">Häufig gestellte Fragen</h2>
+            <p class="faq-subtitle animate-on-scroll">Alles was Sie über Lobster und unsere Automatisierungslösungen wissen müssen</p>
+            
+            <div class="faq-list animate-on-scroll">
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <button class="faq-question">
+                        <span>Kann Lobster unsere bestehenden Systeme und Datenquellen integrieren?</span>
+                        <div class="faq-arrow"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Ja, Lobster ist darauf ausgelegt, nahtlos mit einer Vielzahl von bestehenden Systemen zu arbeiten. Unsere Plattform unterstützt über 1000 verschiedene Konnektoren und APIs, darunter ERP-Systeme wie SAP, Microsoft Dynamics, Datenbanken, Cloud-Services und Legacy-Systeme. Durch die flexible Architektur können wir auch maßgeschneiderte Integrationen für spezielle Anforderungen entwickeln.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <button class="faq-question">
+                        <span>Wie funktioniert die Datenvisualisierung mit Lobster?</span>
+                        <div class="faq-arrow"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Lobster bietet umfassende Datenvisualisierungstools, die es ermöglichen, Daten aus verschiedenen Quellen in Echtzeit zu konsolidieren und in aussagekräftigen Dashboards darzustellen. Mit integrierten BI-Funktionen können Sie interaktive Berichte erstellen, KPIs überwachen und datengetriebene Entscheidungen treffen. Die Visualisierungen sind vollständig anpassbar und können über Web-Browser oder mobile Apps abgerufen werden.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <button class="faq-question">
+                        <span>Sind Sicherheit und Compliance gewährleistet?</span>
+                        <div class="faq-arrow"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolut. Lobster erfüllt höchste Sicherheitsstandards und ist nach ISO 27001 zertifiziert. Alle Datenübertragungen erfolgen verschlüsselt, und wir bieten umfassende Audit-Trails sowie Compliance-Features für DSGVO, SOX und branchenspezifische Vorschriften. Mit granularen Benutzerrechten und Multi-Faktor-Authentifizierung stellen wir sicher, dass Ihre sensiblen Daten optimal geschützt sind.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <button class="faq-question">
+                        <span>Kann ich Lobster lokal oder in der Cloud betreiben?</span>
+                        <div class="faq-arrow"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Lobster bietet maximale Flexibilität bei der Deployment-Option. Sie können zwischen einer vollständig cloudbasierten Lösung, einer On-Premise-Installation oder einer Hybrid-Architektur wählen. Unsere Cloud-Lösung bietet automatische Updates und Skalierung, während On-Premise-Installationen maximale Kontrolle und Datensouveränität gewährleisten. Hybrid-Modelle ermöglichen es, verschiedene Workloads je nach Anforderung optimal zu platzieren.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <button class="faq-question">
+                        <span>Welche Unterstützung bietet Lobster bei der Implementierung?</span>
+                        <div class="faq-arrow"></div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Wir begleiten Sie vom ersten Beratungsgespräch bis zur erfolgreichen Produktivsetzung und darüber hinaus. Unser Servicepaket umfasst detaillierte Projektplanung, professionelle Datenanalyse, maßgeschneiderte Entwicklung, umfassende Schulungen für Ihr Team und kontinuierlichen Support. Mit unserem bewährten Implementierungsansatz stellen wir sicher, dass Ihr Projekt termingerecht und im Budget abgeschlossen wird.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-contact animate-on-scroll">
+                <h3>Noch Fragen?</h3>
+                <p>Unser Expertenteam steht Ihnen gerne zur Verfügung</p>
+                <a href="#" class="faq-contact-btn" onclick="openContactModal()">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                    </svg>
+                    Sprich uns an
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Final CTA Section -->
     <section class="final-cta" id="contact">
         <div class="final-cta-container animate-on-scroll">
@@ -1269,23 +1574,6 @@
                         icon: "📋",
                         description: "Automated onboarding workflows with task assignments and progress tracking",
                         benefit: "Streamlined new hire experience"
-                    }
-                ]
-            },
-            inventory: {
-                name: "Inventory Management",
-                solutions: [
-                    {
-                        tool: "Power BI",
-                        icon: "📊",
-                        description: "Real-time inventory dashboards with automated alerts for low stock levels",
-                        benefit: "Prevent stockouts & overstock"
-                    },
-                    {
-                        tool: "Power Apps",
-                        icon: "📦",
-                        description: "Barcode scanning app for instant inventory updates and tracking",
-                        benefit: "Real-time accuracy"
                     }
                 ]
             },
@@ -1553,6 +1841,21 @@
             
             // Start animation cycle
             setInterval(animatePhrase, 4000); // Slightly longer interval for better readability
+        }
+
+        // FAQ Toggle Function
+        function toggleFAQ(item) {
+            const isActive = item.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+            }
         }
 
         // Add event listeners to process planner

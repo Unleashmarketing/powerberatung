@@ -79,11 +79,12 @@
             letter-spacing: -0.02em;
         }
 
-        .logo::before {
-            content: "⚡";
-            margin-right: 0.5rem;
-            font-size: 1.8rem;
-            filter: drop-shadow(0 0 8px rgba(0, 122, 255, 0.3));
+        .logo-image {
+            width: 40px;
+            height: 40px;
+            margin-right: 0.75rem;
+            border-radius: 8px;
+            object-fit: contain;
         }
 
         .nav-menu {
@@ -934,1448 +935,1639 @@
             background: var(--background-secondary);
         }
 
-        .faq-item.active .faq-question {
-background: rgba(0, 122, 255, 0.03);
-color: var(--primary-color);
-}
-
-.faq-arrow {
-        width: 20px;
-        height: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--background-secondary);
-        border-radius: 50%;
-        transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        flex-shrink: 0;
-        margin-left: 1rem;
-    }
-
-    .faq-item.active .faq-arrow {
-        background: var(--primary-color);
-        transform: rotate(180deg);
-    }
-
-    .faq-arrow::after {
-        content: '';
-        width: 6px;
-        height: 6px;
-        border-right: 2px solid var(--text-secondary);
-        border-bottom: 2px solid var(--text-secondary);
-        transform: rotate(45deg);
-        transition: all 0.3s ease;
-        margin-bottom: 3px;
-    }
-
-    .faq-item.active .faq-arrow::after {
-        border-color: white;
-    }
-
-    .faq-answer {
-        max-height: 0;
-        overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        background: var(--background-primary);
-    }
-
-    .faq-item.active .faq-answer {
-        max-height: 300px;
-    }
-
-    .faq-answer-content {
-        padding: 1.5rem 2.5rem 2rem;
-        color: var(--text-secondary);
-        line-height: 1.7;
-        font-size: 1rem;
-        font-weight: 400;
-    }
-
-    /* Contact & Booking Section */
-    .contact-booking {
-        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-        padding: 8rem 2rem;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .contact-booking::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(ellipse at center, rgba(0, 122, 255, 0.1) 0%, transparent 70%);
-    }
-
-    .contact-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 2;
-    }
-
-    .contact-header {
-        text-align: center;
-        margin-bottom: 5rem;
-    }
-
-    .contact-header h2 {
-        font-size: 3rem;
-        color: white;
-        margin-bottom: 1.5rem;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-    }
-
-    .contact-header p {
-        font-size: 1.3rem;
-        color: rgba(255, 255, 255, 0.8);
-        max-width: 600px;
-        margin: 0 auto;
-        line-height: 1.6;
-    }
-
-    .contact-options {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 3rem;
-        margin-bottom: 4rem;
-    }
-
-    .contact-card {
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 24px;
-        padding: 3rem;
-        text-align: center;
-        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .contact-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: var(--gradient-primary);
-    }
-
-    .contact-card:hover {
-        transform: translateY(-8px);
-        background: rgba(255, 255, 255, 0.12);
-        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
-    }
-
-    .contact-icon {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto 2rem;
-        background: var(--gradient-primary);
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-    }
-
-    .contact-card h3 {
-        font-size: 1.8rem;
-        color: white;
-        margin-bottom: 1rem;
-        font-weight: 600;
-    }
-
-    .contact-card p {
-        color: rgba(255, 255, 255, 0.7);
-        margin-bottom: 2.5rem;
-        font-size: 1.1rem;
-        line-height: 1.6;
-    }
-
-    .contact-form-card {
-        grid-column: 1 / -1;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        border-radius: 24px;
-        padding: 4rem;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .form-header {
-        text-align: center;
-        margin-bottom: 3rem;
-    }
-
-    .form-header h3 {
-        font-size: 2rem;
-        color: var(--text-primary);
-        margin-bottom: 0.5rem;
-        font-weight: 600;
-    }
-
-    .form-header p {
-        color: var(--text-secondary);
-        font-size: 1.1rem;
-    }
-
-    .contact-form {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .form-group {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .form-group.full-width {
-        grid-column: 1 / -1;
-    }
-
-    .form-group label {
-        font-weight: 600;
-        color: var(--text-primary);
-        margin-bottom: 0.5rem;
-        font-size: 0.95rem;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 1.2rem;
-        border: 2px solid var(--border-color);
-        border-radius: 12px;
-        font-size: 1rem;
-        background: var(--background-primary);
-        color: var(--text-primary);
-        transition: all 0.3s ease;
-        font-family: inherit;
-        resize: vertical;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-        outline: none;
-        border-color: var(--primary-color);
-        box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1);
-        transform: translateY(-1px);
-    }
-
-    .form-group textarea {
-        min-height: 120px;
-        resize: vertical;
-    }
-
-    .submit-section {
-        grid-column: 1 / -1;
-        text-align: center;
-        margin-top: 2rem;
-    }
-
-    .submit-btn {
-        background: var(--gradient-primary);
-        color: white;
-        padding: 1.5rem 3rem;
-        border: none;
-        border-radius: 12px;
-        font-size: 1.1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        box-shadow: 0 8px 30px rgba(0, 122, 255, 0.3);
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-family: inherit;
-    }
-
-    .submit-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 40px rgba(0, 122, 255, 0.4);
-    }
-
-    .submit-btn:active {
-        transform: translateY(0);
-    }
-
-    .contact-btn-primary, .contact-btn-secondary {
-        padding: 1.2rem 2.5rem;
-        border-radius: 12px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        justify-content: center;
-        min-width: 200px;
-    }
-
-    .contact-btn-primary {
-        background: white;
-        color: var(--primary-color);
-        box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
-    }
-
-    .contact-btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 40px rgba(255, 255, 255, 0.3);
-    }
-
-    .contact-btn-secondary {
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .contact-btn-secondary:hover {
-        background: rgba(255, 255, 255, 0.2);
-        border-color: rgba(255, 255, 255, 0.5);
-        transform: translateY(-1px);
-    }
-
-    /* Trust Indicators */
-    .trust-indicators {
-        margin-top: 3rem;
-        padding-top: 3rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        text-align: center;
-    }
-
-    .trust-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-    }
-
-    .trust-item {
-        color: rgba(0, 0, 0, 0.8);
-        font-size: 0.9rem;
-    }
-
-    .trust-item strong {
-        color: rgba(0, 0, 0, 0.8);
-        font-size: 1.1rem;
-        display: block;
-        margin-bottom: 0.5rem;
-    }
-
-    /* Footer */
-    .footer {
-        background: var(--text-primary);
-        color: white;
-        padding: 3rem 2rem 1rem;
-        text-align: center;
-    }
-
-    .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .footer p {
-        margin-bottom: 1rem;
-        opacity: 0.8;
-        font-weight: 400;
-    }
-
-    /* Scroll to Top */
-    .scroll-to-top {
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        background: var(--gradient-primary);
-        color: white;
-        width: 50px;
-        height: 50px;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        box-shadow: 0 8px 30px rgba(0, 122, 255, 0.3);
-        z-index: 1000;
-    }
-
-    .scroll-to-top:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 40px rgba(0, 122, 255, 0.4);
-    }
-
-    .scroll-to-top.visible {
-        display: flex;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .mobile-menu-toggle {
-            display: flex;
-        }
-
-        .nav-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: saturate(180%) blur(20px);
-            flex-direction: column;
-            padding: 2rem;
-            box-shadow: 0 10px 40px var(--shadow-medium);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .nav-menu.active {
-            display: flex;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-        }
-
-        .animated-word-container {
-            height: 1.3em;
-        }
-
-        .about-container {
-            grid-template-columns: 1fr;
-            gap: 3rem;
-        }
-
-        .about-right {
-            order: -1;
-        }
-
-        .founder-quote {
-            margin-top: -30px;
-            margin-left: 15px;
-            margin-right: -8px;
-        }
-
-        .about-image img {
-            height: 280px;
-        }
-
-        .cta-buttons {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .services-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .benefits-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .contact-options {
-            grid-template-columns: 1fr;
-        }
-
-        .contact-form {
-            grid-template-columns: 1fr;
-        }
-
-        .contact-header h2 {
-            font-size: 2.2rem;
-        }
-
-        .contact-form-card {
-            padding: 2.5rem 1.5rem;
-        }
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .animate-on-scroll {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .animate-on-scroll.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* Loading state */
-    .loading {
-        opacity: 0;
-        transition: opacity 0.5s ease;
-    }
-
-    .loaded {
-        opacity: 1;
-    }
-
-    /* Form Success/Error States */
-    .form-message {
-        padding: 1rem;
-        border-radius: 12px;
-        margin-bottom: 2rem;
-        text-align: center;
-        display: none;
-    }
-
-    .form-message.success {
-        background: rgba(48, 209, 88, 0.1);
-        color: #30D158;
-        border: 1px solid rgba(48, 209, 88, 0.3);
-    }
-
-    .form-message.error {
-        background: rgba(255, 59, 48, 0.1);
-        color: #FF3B30;
-        border: 1px solid rgba(255, 59, 48, 0.3);
-    }
-</style>
+.faq-item.active .faq-question {
+           background: rgba(0, 122, 255, 0.03);
+           color: var(--primary-color);
+       }
+
+       .faq-arrow {
+           width: 20px;
+           height: 20px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           background: var(--background-secondary);
+           border-radius: 50%;
+           transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+           flex-shrink: 0;
+           margin-left: 1rem;
+       }
+
+       .faq-item.active .faq-arrow {
+           background: var(--primary-color);
+           transform: rotate(180deg);
+       }
+
+       .faq-arrow::after {
+           content: '';
+           width: 6px;
+           height: 6px;
+           border-right: 2px solid var(--text-secondary);
+           border-bottom: 2px solid var(--text-secondary);
+           transform: rotate(45deg);
+           transition: all 0.3s ease;
+           margin-bottom: 3px;
+       }
+
+       .faq-item.active .faq-arrow::after {
+           border-color: white;
+       }
+
+       .faq-answer {
+           max-height: 0;
+           overflow: hidden;
+           transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+           background: var(--background-primary);
+       }
+
+       .faq-item.active .faq-answer {
+           max-height: 300px;
+       }
+
+       .faq-answer-content {
+           padding: 1.5rem 2.5rem 2rem;
+           color: var(--text-secondary);
+           line-height: 1.7;
+           font-size: 1rem;
+           font-weight: 400;
+       }
+
+       /* Contact & Booking Section */
+       .contact-booking {
+           background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+           padding: 8rem 2rem;
+           position: relative;
+           overflow: hidden;
+       }
+
+       .contact-booking::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           background: radial-gradient(ellipse at center, rgba(0, 122, 255, 0.1) 0%, transparent 70%);
+       }
+
+       .contact-container {
+           max-width: 1200px;
+           margin: 0 auto;
+           position: relative;
+           z-index: 2;
+       }
+
+       .contact-header {
+           text-align: center;
+           margin-bottom: 5rem;
+       }
+
+       .contact-header h2 {
+           font-size: 3rem;
+           color: white;
+           margin-bottom: 1.5rem;
+           font-weight: 700;
+           letter-spacing: -0.02em;
+       }
+
+       .contact-header p {
+           font-size: 1.3rem;
+           color: rgba(255, 255, 255, 0.8);
+           max-width: 600px;
+           margin: 0 auto;
+           line-height: 1.6;
+       }
+
+       .contact-options {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+           gap: 3rem;
+           margin-bottom: 4rem;
+       }
+
+       .contact-card {
+           background: rgba(255, 255, 255, 0.08);
+           backdrop-filter: blur(20px);
+           border: 1px solid rgba(255, 255, 255, 0.1);
+           border-radius: 24px;
+           padding: 3rem;
+           text-align: center;
+           transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+           position: relative;
+           overflow: hidden;
+       }
+
+       .contact-card::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           right: 0;
+           height: 4px;
+           background: var(--gradient-primary);
+       }
+
+       .contact-card:hover {
+           transform: translateY(-8px);
+           background: rgba(255, 255, 255, 0.12);
+           box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+       }
+
+       .contact-icon {
+           width: 80px;
+           height: 80px;
+           margin: 0 auto 2rem;
+           background: var(--gradient-primary);
+           border-radius: 20px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           font-size: 2rem;
+       }
+
+       .contact-icon svg {
+           width: 40px;
+           height: 40px;
+           stroke: white;
+       }
+
+       .contact-card h3 {
+           font-size: 1.8rem;
+           color: white;
+           margin-bottom: 1rem;
+           font-weight: 600;
+       }
+
+       .contact-card p {
+           color: rgba(255, 255, 255, 0.7);
+           margin-bottom: 2.5rem;
+           font-size: 1.1rem;
+           line-height: 1.6;
+       }
+
+       .contact-form-card {
+           grid-column: 1 / -1;
+           background: rgba(255, 255, 255, 0.95);
+           backdrop-filter: blur(20px);
+           border-radius: 24px;
+           padding: 4rem;
+           box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+           border: 1px solid rgba(255, 255, 255, 0.2);
+       }
+
+       .form-header {
+           text-align: center;
+           margin-bottom: 3rem;
+       }
+
+       .form-header h3 {
+           font-size: 2rem;
+           color: var(--text-primary);
+           margin-bottom: 0.5rem;
+           font-weight: 600;
+       }
+
+       .form-header p {
+           color: var(--text-secondary);
+           font-size: 1.1rem;
+       }
+
+       .contact-form {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+           gap: 2rem;
+           max-width: 800px;
+           margin: 0 auto;
+       }
+
+       .form-group {
+           display: flex;
+           flex-direction: column;
+       }
+
+       .form-group.full-width {
+           grid-column: 1 / -1;
+       }
+
+       .form-group label {
+           font-weight: 600;
+           color: var(--text-primary);
+           margin-bottom: 0.5rem;
+           font-size: 0.95rem;
+       }
+
+       .form-group input,
+       .form-group select,
+       .form-group textarea {
+           padding: 1.2rem;
+           border: 2px solid var(--border-color);
+           border-radius: 12px;
+           font-size: 1rem;
+           background: var(--background-primary);
+           color: var(--text-primary);
+           transition: all 0.3s ease;
+           font-family: inherit;
+           resize: vertical;
+       }
+
+       .form-group input:focus,
+       .form-group select:focus,
+       .form-group textarea:focus {
+           outline: none;
+           border-color: var(--primary-color);
+           box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1);
+           transform: translateY(-1px);
+       }
+
+       .form-group textarea {
+           min-height: 120px;
+           resize: vertical;
+       }
+
+       .submit-section {
+           grid-column: 1 / -1;
+           text-align: center;
+           margin-top: 2rem;
+       }
+
+       .submit-btn {
+           background: var(--gradient-primary);
+           color: white;
+           padding: 1.5rem 3rem;
+           border: none;
+           border-radius: 12px;
+           font-size: 1.1rem;
+           font-weight: 600;
+           cursor: pointer;
+           transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+           box-shadow: 0 8px 30px rgba(0, 122, 255, 0.3);
+           display: inline-flex;
+           align-items: center;
+           gap: 0.5rem;
+           font-family: inherit;
+       }
+
+       .submit-btn:hover {
+           transform: translateY(-2px);
+           box-shadow: 0 12px 40px rgba(0, 122, 255, 0.4);
+       }
+
+       .submit-btn:active {
+           transform: translateY(0);
+       }
+
+       .contact-btn-primary, .contact-btn-secondary {
+           padding: 1.2rem 2.5rem;
+           border-radius: 12px;
+           text-decoration: none;
+           font-weight: 600;
+           font-size: 1rem;
+           transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+           display: inline-flex;
+           align-items: center;
+           gap: 0.5rem;
+           justify-content: center;
+           min-width: 200px;
+       }
+
+       .contact-btn-primary {
+           background: white;
+           color: var(--primary-color);
+           box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+       }
+
+       .contact-btn-primary:hover {
+           transform: translateY(-2px);
+           box-shadow: 0 12px 40px rgba(255, 255, 255, 0.3);
+       }
+
+       .contact-btn-secondary {
+           background: rgba(255, 255, 255, 0.1);
+           color: white;
+           border: 2px solid rgba(255, 255, 255, 0.3);
+       }
+
+       .contact-btn-secondary:hover {
+           background: rgba(255, 255, 255, 0.2);
+           border-color: rgba(255, 255, 255, 0.5);
+           transform: translateY(-1px);
+       }
+
+       /* Trust Indicators */
+       .trust-indicators {
+           margin-top: 3rem;
+           padding-top: 3rem;
+           border-top: 1px solid rgba(255, 255, 255, 0.1);
+           text-align: center;
+       }
+
+       .trust-grid {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+           gap: 2rem;
+           margin-top: 2rem;
+       }
+
+       .trust-item {
+           color: rgba(0, 0, 0, 0.8);
+           font-size: 0.9rem;
+       }
+
+       .trust-item strong {
+           color: rgba(0, 0, 0, 0.8);
+           font-size: 1.1rem;
+           display: block;
+           margin-bottom: 0.5rem;
+       }
+
+       /* Cookie Banner */
+       .cookie-banner {
+           position: fixed;
+           bottom: 0;
+           left: 0;
+           right: 0;
+           background: rgba(255, 255, 255, 0.98);
+           backdrop-filter: blur(20px);
+           border-top: 1px solid var(--border-color);
+           padding: 1.5rem 2rem;
+           z-index: 10000;
+           transform: translateY(100%);
+           transition: transform 0.3s ease;
+           box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+       }
+
+       .cookie-banner.show {
+           transform: translateY(0);
+       }
+
+       .cookie-content {
+           max-width: 1200px;
+           margin: 0 auto;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+           gap: 2rem;
+           flex-wrap: wrap;
+       }
+
+       .cookie-text {
+           flex: 1;
+           color: var(--text-primary);
+           font-size: 0.95rem;
+           line-height: 1.5;
+       }
+
+       .cookie-text a {
+           color: var(--primary-color);
+           text-decoration: none;
+           font-weight: 500;
+       }
+
+       .cookie-text a:hover {
+           text-decoration: underline;
+       }
+
+       .cookie-buttons {
+           display: flex;
+           gap: 1rem;
+           flex-shrink: 0;
+       }
+
+       .cookie-btn {
+           padding: 0.8rem 1.5rem;
+           border: none;
+           border-radius: 8px;
+           font-weight: 500;
+           font-size: 0.9rem;
+           cursor: pointer;
+           transition: all 0.2s ease;
+           font-family: inherit;
+       }
+
+       .cookie-btn.accept {
+           background: var(--primary-color);
+           color: white;
+       }
+
+       .cookie-btn.accept:hover {
+           background: #0056cc;
+       }
+
+       .cookie-btn.decline {
+           background: var(--background-secondary);
+           color: var(--text-primary);
+           border: 1px solid var(--border-color);
+       }
+
+       .cookie-btn.decline:hover {
+           background: var(--background-tertiary);
+       }
+
+       /* Footer */
+       .footer {
+           background: var(--text-primary);
+           color: white;
+           padding: 3rem 2rem 1rem;
+           text-align: center;
+       }
+
+       .footer-content {
+           max-width: 1200px;
+           margin: 0 auto;
+       }
+
+       .footer-links {
+           display: flex;
+           justify-content: center;
+           gap: 2rem;
+           margin-bottom: 2rem;
+           flex-wrap: wrap;
+       }
+
+       .footer-links a {
+           color: rgba(255, 255, 255, 0.8);
+           text-decoration: none;
+           font-size: 0.9rem;
+           transition: all 0.2s ease;
+       }
+
+       .footer-links a:hover {
+           color: white;
+           text-decoration: underline;
+       }
+
+       .footer p {
+           margin-bottom: 1rem;
+           opacity: 0.8;
+           font-weight: 400;
+       }
+
+       .footer p:last-child {
+           margin-bottom: 0;
+       }
+
+       /* Scroll to Top */
+       .scroll-to-top {
+           position: fixed;
+           bottom: 2rem;
+           right: 2rem;
+           background: var(--gradient-primary);
+           color: white;
+           width: 50px;
+           height: 50px;
+           border: none;
+           border-radius: 50%;
+           cursor: pointer;
+           display: none;
+           align-items: center;
+           justify-content: center;
+           font-size: 1.2rem;
+           transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+           box-shadow: 0 8px 30px rgba(0, 122, 255, 0.3);
+           z-index: 1000;
+       }
+
+       .scroll-to-top:hover {
+           transform: translateY(-2px);
+           box-shadow: 0 12px 40px rgba(0, 122, 255, 0.4);
+       }
+
+       .scroll-to-top.visible {
+           display: flex;
+       }
+
+       /* Responsive Design */
+       @media (max-width: 768px) {
+           .mobile-menu-toggle {
+               display: flex;
+           }
+
+           .nav-menu {
+               display: none;
+               position: absolute;
+               top: 100%;
+               left: 0;
+               width: 100%;
+               background: rgba(255, 255, 255, 0.95);
+               backdrop-filter: saturate(180%) blur(20px);
+               flex-direction: column;
+               padding: 2rem;
+               box-shadow: 0 10px 40px var(--shadow-medium);
+               border-bottom: 1px solid var(--border-color);
+           }
+
+           .nav-menu.active {
+               display: flex;
+           }
+
+           .hero h1 {
+               font-size: 3rem;
+           }
+
+           .hero-description {
+               font-size: 1.1rem;
+           }
+
+           .animated-word-container {
+               height: 1.3em;
+           }
+
+           .about-container {
+               grid-template-columns: 1fr;
+               gap: 3rem;
+           }
+
+           .about-right {
+               order: -1;
+           }
+
+           .founder-quote {
+               margin-top: -30px;
+               margin-left: 15px;
+               margin-right: -8px;
+           }
+
+           .about-image img {
+               height: 280px;
+           }
+
+           .cta-buttons {
+               flex-direction: column;
+               align-items: center;
+           }
+
+           .services-grid {
+               grid-template-columns: 1fr;
+           }
+
+           .benefits-grid {
+               grid-template-columns: 1fr;
+           }
+
+           .contact-options {
+               grid-template-columns: 1fr;
+           }
+
+           .contact-form {
+               grid-template-columns: 1fr;
+           }
+
+           .contact-header h2 {
+               font-size: 2.2rem;
+           }
+
+           .contact-form-card {
+               padding: 2.5rem 1.5rem;
+           }
+
+           .cookie-content {
+               flex-direction: column;
+               text-align: center;
+           }
+
+           .footer-links {
+               flex-direction: column;
+               gap: 1rem;
+           }
+       }
+
+       /* Animations */
+       @keyframes fadeInUp {
+           from {
+               opacity: 0;
+               transform: translateY(30px);
+           }
+           to {
+               opacity: 1;
+               transform: translateY(0);
+           }
+       }
+
+       .animate-on-scroll {
+           opacity: 0;
+           transform: translateY(30px);
+           transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+       }
+
+       .animate-on-scroll.visible {
+           opacity: 1;
+           transform: translateY(0);
+       }
+
+       /* Loading state */
+       .loading {
+           opacity: 0;
+           transition: opacity 0.5s ease;
+       }
+
+       .loaded {
+           opacity: 1;
+       }
+
+       /* Form Success/Error States */
+       .form-message {
+           padding: 1rem;
+           border-radius: 12px;
+           margin-bottom: 2rem;
+           text-align: center;
+           display: none;
+       }
+
+       .form-message.success {
+           background: rgba(48, 209, 88, 0.1);
+           color: #30D158;
+           border: 1px solid rgba(48, 209, 88, 0.3);
+       }
+
+       .form-message.error {
+           background: rgba(255, 59, 48, 0.1);
+           color: #FF3B30;
+           border: 1px solid rgba(255, 59, 48, 0.3);
+       }
+   </style>
 </head>
 <body class="loading">
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav-container">
-            <div class="logo">POWER<span style="font-weight: 400; margin-left: 0.5rem;">consulting</span></div>
-            <ul class="nav-menu">
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Our Solutions</a></li>
-                <li><a href="#automation-planner">Automation Planner</a></li>
-                <li><a href="#contact" class="contact-btn">Contact Us</a></li>
-            </ul>
-            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
-    <!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content animate-on-scroll">
-        <h1>
-            <span class="highlight">Transform your business</span>
-            <span class="animated-word-container">
-                <span class="animated-word" id="animatedWord">through automation</span>
-            </span>
-        </h1>
-        
-        <p class="hero-description">
-            Harness the power of Microsoft Power Platform to streamline processes, eliminate manual work, and unlock your team's potential. Experience the future of business automation today.
-        </p>
-        
-        <div class="cta-buttons">
-            <a href="#automation-planner" class="cta-primary">
-                Get your automation plan
-                <svg class="cta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-            </a>
-            <a href="#contact" class="cta-secondary">
-                <svg class="cta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                </svg>
-                Schedule a call
-            </a>
-        </div>
-    </div>
-</section>
+   <!-- Cookie Banner -->
+   <div class="cookie-banner" id="cookieBanner">
+       <div class="cookie-content">
+           <div class="cookie-text">
+               Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. 
+               <a href="#datenschutz">Datenschutzerklärung</a> | 
+               <a href="#impressum">Impressum</a>
+           </div>
+           <div class="cookie-buttons">
+               <button class="cookie-btn decline" onclick="declineCookies()">Ablehnen</button>
+               <button class="cookie-btn accept" onclick="acceptCookies()">Akzeptieren</button>
+           </div>
+       </div>
+   </div>
 
-<!-- About Section -->
-<section class="about" id="about">
-    <div class="about-container">
-        <div class="about-content animate-on-scroll">
-            <h2>Our Experts for Your Automation</h2>
-            <p>Our team is a dynamic blend of young, energetic, and multicultural professionals who bring a rich tapestry of experience from various economic sectors. We are passionate about leveraging low code automation to streamline business processes and visualize data effectively.</p>
-            <p>Our diverse backgrounds and collaborative spirit foster innovative solutions tailored to meet our clients' unique needs.</p>
-            
-            <div style="margin-top: 3rem;">
-                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text-primary); font-weight: 600;">Our Vision</h3>
-                <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 1.5rem;">We envision a world where businesses operate with unprecedented efficiency and transparency, driven by seamless low-code automation integration. Our goal is to empower organizations to overcome traditional operational barriers and unlock the full potential of their data and processes.</p>
-            </div>
-        </div>
-        <div class="about-right animate-on-scroll">
-            <div class="about-image">
-                <img src="images/1606571177064.webp" alt="Paul Stierle, Founder and CEO">
-            </div>
-            
-            <div class="founder-quote">
-                <p>"The Power Platform empowers employees to digitize their own workplace. This saves time and allows people to focus on value-generating activities instead of being stuck with time consuming, manual data entry and copy&paste."</p>
-                <div class="signature">Paul Stierle, Founder and CEO</div>
-            </div>
-        </div>
-    </div>
-</section>
+   <!-- Header -->
+   <header class="header">
+       <nav class="nav-container">
+           <div class="logo">
+               <img src="images/logo.png" alt="Power Consulting Logo" class="logo-image">
+               POWER<span style="font-weight: 400; margin-left: 0.5rem;">consulting</span>
+           </div>
+           <ul class="nav-menu">
+               <li><a href="#about">About Us</a></li>
+               <li><a href="#services">Our Solutions</a></li>
+               <li><a href="#automation-planner">Automation Planner</a></li>
+               <li><a href="#contact" class="contact-btn">Contact Us</a></li>
+           </ul>
+           <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+               <span></span>
+               <span></span>
+               <span></span>
+           </div>
+       </nav>
+   </header>
 
-<!-- Services Section -->
-<section class="services" id="services">
-    <div class="services-container">
-        <h2 class="animate-on-scroll">Our Solutions</h2>
-        <div class="services-grid">
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon">
-                    <img src="images/code.svg" alt="Consulting Icon">
-                </div>
-                <h3>Power Consulting & Development</h3>
-                <p><strong>Custom Low Code Automation Solutions</strong><br>
-                We provide consulting and development services for low code automation solutions, enhancing your business processes and visualizing your data with bespoke custom development.</p>
-                <a href="#contact" class="service-btn">Learn More</a>
-            </div>
-            
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon">
-                    <img src="images/wrench (3).svg" alt="Tools Icon">
-                </div>
-                <h3>Power Solutions</h3>
-                <p><strong>Ready-to-Use Tools</strong><br>
-                Free up valuable time for your employees with our pre-built tools. Developed with best practices and enriched by industry insights, these solutions are ready to deploy for immediate impact.</p>
-                <a href="#contact" class="service-btn">Learn More</a>
-            </div>
-            
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon">
-                    <img src="images/scroll-text.svg" alt="Training Icon">
-                </div>
-                <h3>Power Academy</h3>
-                <p><strong>Expert Training for Power Platform Mastery</strong><br>
-                Our qualified Power Platform experts train your employees to utilize Power Platform effectively, enabling them to expand and optimize your automation solutions.</p>
-                <a href="#contact" class="service-btn">Learn More</a>
-            </div>
-        </div>
-    </div>
-</section>
+   <!-- Hero Section -->
+   <section class="hero">
+       <div class="hero-content animate-on-scroll">
+           <h1>
+               <span class="highlight">Transform your business</span>
+               <span class="animated-word-container">
+                   <span class="animated-word" id="animatedWord">through automation</span>
+               </span>
+           </h1>
+           
+           <p class="hero-description">
+               Harness the power of Microsoft Power Platform to streamline processes, eliminate manual work, and unlock your team's potential. Experience the future of business automation today.
+           </p>
+           
+           <div class="cta-buttons">
+               <a href="#automation-planner" class="cta-primary">
+                   Get your automation plan
+                   <svg class="cta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                   </svg>
+               </a>
+               <a href="#contact" class="cta-secondary">
+                   <svg class="cta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                   </svg>
+                   Schedule a call
+               </a>
+           </div>
+       </div>
+   </section>
 
-<!-- Interactive Process Automation Planner -->
-<section class="automation-planner" id="automation-planner">
-    <div class="planner-container">
-        <h2 class="animate-on-scroll">Process Automation Planner</h2>
-        <p class="subtitle animate-on-scroll">Get personalized Power Platform solutions for your specific business processes</p>
-        
-        <div class="planner-widget animate-on-scroll">
-            <div class="process-selector">
-                <h3 style="margin-bottom: 1.5rem; color: var(--text-primary); font-weight: 600;">Which processes are slowing down your business?</h3>
-                <div class="process-grid">
-                    <div class="process-card" data-process="invoice">
-                        <div class="check-icon">✓</div>
-                        <h4>Invoice Processing</h4>
-                        <p>Manual invoice entry, approval workflows, payment tracking</p>
-                    </div>
-                    <div class="process-card" data-process="hr">
-                        <div class="check-icon">✓</div>
-                        <h4>HR & Onboarding</h4>
-                        <p>Employee requests, leave management, document collection</p>
-                    </div>
-                    <div class="process-card" data-process="inventory">
-                        <div class="check-icon">✓</div>
-                        <h4>Inventory Management</h4>
-                        <p>Stock tracking, reorder alerts, supplier communication</p>
-                    </div>
-                    <div class="process-card" data-process="sales">
-                        <div class="check-icon">✓</div>
-                        <h4>Sales Pipeline</h4>
-                        <p>Lead management, quote generation, customer follow-ups</p>
-                    </div>
-                    <div class="process-card" data-process="reporting">
-                        <div class="check-icon">✓</div>
-                        <h4>Data & Reporting</h4>
-                        <p>Manual report creation, data consolidation from multiple sources</p>
-                    </div>
-                    <div class="process-card" data-process="compliance">
-                        <div class="check-icon">✓</div>
-                        <h4>Compliance & Auditing</h4>
-                        <p>Document tracking, audit preparation, regulatory reporting</p>
-                    </div>
-                </div>
-            </div>
+   <!-- About Section -->
+   <section class="about" id="about">
+       <div class="about-container">
+           <div class="about-content animate-on-scroll">
+               <h2>Our Experts for Your Automation</h2>
+               <p>Our team is a dynamic blend of young, energetic, and multicultural professionals who bring a rich tapestry of experience from various economic sectors. We are passionate about leveraging low code automation to streamline business processes and visualize data effectively.</p>
+               <p>Our diverse backgrounds and collaborative spirit foster innovative solutions tailored to meet our clients' unique needs.</p>
+               
+               <div style="margin-top: 3rem;">
+                   <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text-primary); font-weight: 600;">Our Vision</h3>
+                   <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 1.5rem;">We envision a world where businesses operate with unprecedented efficiency and transparency, driven by seamless low-code automation integration. Our goal is to empower organizations to overcome traditional operational barriers and unlock the full potential of their data and processes.</p>
+               </div>
+           </div>
+           <div class="about-right animate-on-scroll">
+               <div class="about-image">
+                   <img src="images/1606571177064.webp" alt="Paul Stierle, Founder and CEO">
+               </div>
+               
+               <div class="founder-quote">
+                   <p>"The Power Platform empowers employees to digitize their own workplace. This saves time and allows people to focus on value-generating activities instead of being stuck with time consuming, manual data entry and copy&paste."</p>
+                   <div class="signature">Paul Stierle, Founder and CEO</div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-            <div class="company-info">
+   <!-- Services Section -->
+   <section class="services" id="services">
+       <div class="services-container">
+           <h2 class="animate-on-scroll">Our Solutions</h2>
+           <div class="services-grid">
+               <div class="service-card animate-on-scroll">
+                   <div class="service-icon">
+                       <img src="images/code.svg" alt="Consulting Icon">
+                   </div>
+                   <h3>Power Consulting & Development</h3>
+                   <p><strong>Custom Low Code Automation Solutions</strong><br>
+                   We provide consulting and development services for low code automation solutions, enhancing your business processes and visualizing your data with bespoke custom development.</p>
+                   <a href="#contact" class="service-btn">Learn More</a>
+               </div>
+               
+               <div class="service-card animate-on-scroll">
+                   <div class="service-icon">
+                       <img src="images/wrench (3).svg" alt="Tools Icon">
+                   </div>
+                   <h3>Power Solutions</h3>
+                   <p><strong>Ready-to-Use Tools</strong><br>
+                   Free up valuable time for your employees with our pre-built tools. Developed with best practices and enriched by industry insights, these solutions are ready to deploy for immediate impact.</p>
+                   <a href="#contact" class="service-btn">Learn More</a>
+               </div>
+               
+               <div class="service-card animate-on-scroll">
+                   <div class="service-icon">
+                       <img src="images/scroll-text.svg" alt="Training Icon">
+                   </div>
+                   <h3>Power Academy</h3>
+                   <p><strong>Expert Training for Power Platform Mastery</strong><br>
+                   Our qualified Power Platform experts train your employees to utilize Power Platform effectively, enabling them to expand and optimize your automation solutions.</p>
+                   <a href="#contact" class="service-btn">Learn More</a>
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- Interactive Process Automation Planner -->
+   <section class="automation-planner" id="automation-planner">
+       <div class="planner-container">
+           <h2 class="animate-on-scroll">Process Automation Planner</h2>
+           <p class="subtitle animate-on-scroll">Get personalized Power Platform solutions for your specific business processes</p>
+           
+           <div class="planner-widget animate-on-scroll">
+               <div class="process-selector">
+                   <h3 style="margin-bottom: 1.5rem; color: var(--text-primary); font-weight: 600;">Which processes are slowing down your business?</h3>
+                   <div class="process-grid">
+                       <div class="process-card" data-process="invoice">
+                           <div class="check-icon">✓</div>
+                           <h4>Invoice Processing</h4>
+                           <p>Manual invoice entry, approval workflows, payment tracking</p>
+                       </div>
+                       <div class="process-card" data-process="hr">
+                           <div class="check-icon">✓</div>
+                           <h4>HR & Onboarding</h4>
+                           <p>Employee requests, leave management, document collection</p>
+                       </div>
+                       <div class="process-card" data-process="inventory">
+                           <div class="check-icon">✓</div>
+                           <h4>Inventory Management</h4>
+                           <p>Stock tracking, reorder alerts, supplier communication</p>
+                       </div>
+                       <div class="process-card" data-process="sales">
+                           <div class="check-icon">✓</div>
+                           <h4>Sales Pipeline</h4>
+                           <p>Lead management, quote generation, customer follow-ups</p>
+                       </div>
+                       <div class="process-card" data-process="reporting">
+                           <div class="check-icon">✓</div>
+                           <h4>Data & Reporting</h4>
+                           <p>Manual report creation, data consolidation from multiple sources</p>
+                       </div>
+                       <div class="process-card" data-process="compliance">
+                           <div class="check-icon">✓</div>
+                           <h4>Compliance & Auditing</h4>
+                           <p>Document tracking, audit preparation, regulatory reporting</p>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="company-info">
+                   <div class="input-group">
+                       <label for="industry">Industry</label>
+                       <select id="industry">
+                           <option value="">Select Industry</option>
+                           <option value="manufacturing">Manufacturing</option>
+                           <option value="retail">Retail</option>
+                           <option value="healthcare">Healthcare</option>
+                           <option value="finance">Financial Services</option>
+                           <option value="construction">Construction</option>
+                           <option value="professional">Professional Services</option>
+                           <option value="education">Education</option>
+                           <option value="other">Other</option>
+                       </select>
+                   </div>
+                   <div class="input-group">
+                       <label for="companySize">Company Size</label>
+                       <select id="companySize">
+                           <option value="">Select Size</option>
+                           <option value="small">1-50 employees</option>
+                           <option value="medium">51-250 employees</option>
+                           <option value="large">251-1000 employees</option>
+                           <option value="enterprise">1000+ employees</option>
+                       </select>
+                   </div>
+                   <div class="input-group">
+                       <label for="currentTools">Current Tools</label>
+                       <select id="currentTools">
+                           <option value="">Select Primary Tool</option>
+                           <option value="excel">Mostly Excel/Spreadsheets</option>
+                           <option value="basic">Basic Software Tools</option>
+                           <option value="mixed">Mix of Different Systems</option>
+                           <option value="advanced">Advanced ERP/CRM</option>
+                       </select>
+                   </div>
                 <div class="input-group">
-                    <label for="industry">Industry</label>
-                    <select id="industry">
-                        <option value="">Select Industry</option>
-                        <option value="manufacturing">Manufacturing</option>
-                        <option value="retail">Retail</option>
-                        <option value="healthcare">Healthcare</option>
-                        <option value="finance">Financial Services</option>
-                        <option value="construction">Construction</option>
-                        <option value="professional">Professional Services</option>
-                        <option value="education">Education</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label for="companySize">Company Size</label>
-                    <select id="companySize">
-                        <option value="">Select Size</option>
-                        <option value="small">1-50 employees</option>
-                        <option value="medium">51-250 employees</option>
-                        <option value="large">251-1000 employees</option>
-                        <option value="enterprise">1000+ employees</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label for="currentTools">Current Tools</label>
-                    <select id="currentTools">
-                        <option value="">Select Primary Tool</option>
-                        <option value="excel">Mostly Excel/Spreadsheets</option>
-                        <option value="basic">Basic Software Tools</option>
-                        <option value="mixed">Mix of Different Systems</option>
-                        <option value="advanced">Advanced ERP/CRM</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label for="urgency">Implementation Urgency</label>
-                    <select id="urgency">
-                        <option value="">Select Timeline</option>
-                        <option value="immediate">Within 1 month</option>
-                        <option value="short">1-3 months</option>
-                        <option value="medium">3-6 months</option>
-                        <option value="long">6+ months</option>
-                    </select>
-                </div>
-            </div>
+                       <label for="urgency">Implementation Urgency</label>
+                       <select id="urgency">
+                           <option value="">Select Timeline</option>
+                           <option value="immediate">Within 1 month</option>
+                           <option value="short">1-3 months</option>
+                           <option value="medium">3-6 months</option>
+                           <option value="long">6+ months</option>
+                       </select>
+                   </div>
+               </div>
 
-            <div class="recommendations" id="recommendations">
-                <h3>🎯 Your Personalized Automation Roadmap</h3>
-                <div class="solution-cards" id="solutionCards">
-                    <!-- Solutions will be populated by JavaScript -->
-                </div>
-                <div class="cta-section">
-                    <p><strong>Ready to see these solutions in action?</strong></p>
-                    <a href="#contact" class="demo-btn">Schedule Free Demo →</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+               <div class="recommendations" id="recommendations">
+                   <h3>🎯 Your Personalized Automation Roadmap</h3>
+                   <div class="solution-cards" id="solutionCards">
+                       <!-- Solutions will be populated by JavaScript -->
+                   </div>
+                   <div class="cta-section">
+                       <p><strong>Ready to see these solutions in action?</strong></p>
+                       <a href="#contact" class="demo-btn">Schedule Free Demo →</a>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-<!-- Benefits Section -->
-<section class="benefits">
-    <div class="benefits-container">
-        <h2 class="animate-on-scroll">Why Choose Low-Code Automation?</h2>
-        <div class="benefits-grid">
-            <div class="benefit-item animate-on-scroll">
-                <div class="benefit-icon">
-                    <img src="images/chart-no-axes-combined (1).svg" alt="Cost Efficiency Icon">
-                </div>
-                <h3>Cost Efficiency</h3>
-                <p>Reduce development costs by up to 70% while accelerating time-to-market. Low-code automation eliminates the need for extensive coding expertise, allowing your team to focus on strategic initiatives that drive business growth.</p>
-            </div>
-            
-            <div class="benefit-item animate-on-scroll">
-                <div class="benefit-icon">
-                    <img src="images/zap.svg" alt="Rapid Development Icon">
-                </div>
-                <h3>Rapid Development</h3>
-                <p>Deploy solutions 10x faster than traditional development. Our low-code approach enables rapid prototyping and deployment, helping you respond quickly to market changes and business opportunities.</p>
-            </div>
-            
-            <div class="benefit-item animate-on-scroll">
-                <div class="benefit-icon">
-                    <img src="images/user-pen (1).svg" alt="Enhanced Flexibility Icon">
-                </div>
-                <h3>Enhanced Flexibility</h3>
-                <p>Adapt and scale with ease. Low-code platforms enable non-technical users to modify applications, ensuring your solutions evolve with your business needs while maintaining operational excellence.</p>
-            </div>
-        </div>
-    </div>
-</section>
+   <!-- Benefits Section -->
+   <section class="benefits">
+       <div class="benefits-container">
+           <h2 class="animate-on-scroll">Why Choose Low-Code Automation?</h2>
+           <div class="benefits-grid">
+               <div class="benefit-item animate-on-scroll">
+                   <div class="benefit-icon">
+                       <img src="images/chart-no-axes-combined (1).svg" alt="Cost Efficiency Icon">
+                   </div>
+                   <h3>Cost Efficiency</h3>
+                   <p>Reduce development costs by up to 70% while accelerating time-to-market. Low-code automation eliminates the need for extensive coding expertise, allowing your team to focus on strategic initiatives that drive business growth.</p>
+               </div>
+               
+               <div class="benefit-item animate-on-scroll">
+                   <div class="benefit-icon">
+                       <img src="images/zap.svg" alt="Rapid Development Icon">
+                   </div>
+                   <h3>Rapid Development</h3>
+                   <p>Deploy solutions 10x faster than traditional development. Our low-code approach enables rapid prototyping and deployment, helping you respond quickly to market changes and business opportunities.</p>
+               </div>
+               
+               <div class="benefit-item animate-on-scroll">
+                   <div class="benefit-icon">
+                       <img src="images/user-pen (1).svg" alt="Enhanced Flexibility Icon">
+                   </div>
+                   <h3>Enhanced Flexibility</h3>
+                   <p>Adapt and scale with ease. Low-code platforms enable non-technical users to modify applications, ensuring your solutions evolve with your business needs while maintaining operational excellence.</p>
+               </div>
+           </div>
+       </div>
+   </section>
 
-<!-- FAQ Section -->
-<section class="faq">
-    <div class="faq-container">
-        <h2 class="animate-on-scroll">Frequently Asked Questions</h2>
-        <p class="faq-subtitle animate-on-scroll">Everything you need to know about Power Consulting and our automation solutions</p>
-        
-        <div class="faq-list animate-on-scroll">
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <button class="faq-question">
-                    <span>Can Power Consulting integrate with our existing systems and data sources?</span>
-                    <div class="faq-arrow"></div>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        Yes, Power Consulting specializes in seamless integration with a wide variety of existing systems. Our Microsoft Power Platform solutions support over 1000 different connectors and APIs, including ERP systems like SAP, Microsoft Dynamics, databases, cloud services, and legacy systems. Through our flexible architecture, we can also develop custom integrations for specialized requirements.
-                    </div>
-                </div>
-            </div>
+   <!-- FAQ Section -->
+   <section class="faq">
+       <div class="faq-container">
+           <h2 class="animate-on-scroll">Frequently Asked Questions</h2>
+           <p class="faq-subtitle animate-on-scroll">Everything you need to know about Power Consulting and our automation solutions</p>
+           
+           <div class="faq-list animate-on-scroll">
+               <div class="faq-item" onclick="toggleFAQ(this)">
+                   <button class="faq-question">
+                       <span>Can Power Consulting integrate with our existing systems and data sources?</span>
+                       <div class="faq-arrow"></div>
+                   </button>
+                   <div class="faq-answer">
+                       <div class="faq-answer-content">
+                           Yes, Power Consulting specializes in seamless integration with a wide variety of existing systems. Our Microsoft Power Platform solutions support over 1000 different connectors and APIs, including ERP systems like SAP, Microsoft Dynamics, databases, cloud services, and legacy systems. Through our flexible architecture, we can also develop custom integrations for specialized requirements.
+                       </div>
+                   </div>
+               </div>
 
-            <div class="faqitem" onclick="toggleFAQ(this)">
-<button class="faq-question">
-<span>How does data visualization work with Power Consulting solutions?</span>
-<div class="faq-arrow"></div>
-</button>
-<div class="faq-answer">
-<div class="faq-answer-content">
-Power Consulting offers comprehensive data visualization tools through Power BI that enable real-time data consolidation from various sources and present them in meaningful dashboards. With integrated business intelligence features, you can create interactive reports, monitor KPIs, and make data-driven decisions. Our visualizations are fully customizable and can be accessed via web browsers or mobile apps.
-</div>
-</div>
-</div>
-<div class="faq-item" onclick="toggleFAQ(this)">
-                <button class="faq-question">
-                    <span>Are security and compliance guaranteed with Power Consulting?</span>
-                    <div class="faq-arrow"></div>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        Absolutely. Power Consulting adheres to the highest security standards leveraging Microsoft's enterprise-grade security infrastructure. All data transmissions are encrypted, and we provide comprehensive audit trails as well as compliance features for GDPR, SOX, and industry-specific regulations. With granular user permissions and multi-factor authentication, we ensure your sensitive data is optimally protected.
-                    </div>
-                </div>
-            </div>
+               <div class="faq-item" onclick="toggleFAQ(this)">
+                   <button class="faq-question">
+                       <span>How does data visualization work with Power Consulting solutions?</span>
+                       <div class="faq-arrow"></div>
+                   </button>
+                   <div class="faq-answer">
+                       <div class="faq-answer-content">
+                           Power Consulting offers comprehensive data visualization tools through Power BI that enable real-time data consolidation from various sources and present them in meaningful dashboards. With integrated business intelligence features, you can create interactive reports, monitor KPIs, and make data-driven decisions. Our visualizations are fully customizable and can be accessed via web browsers or mobile apps.
+                       </div>
+                   </div>
+               </div>
 
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <button class="faq-question">
-                    <span>What support does Power Consulting provide during implementation?</span>
-                    <div class="faq-arrow"></div>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        We guide you from the initial consultation to successful production deployment and beyond. Our service package includes detailed project planning, professional data analysis, customized development, comprehensive training for your team, and continuous support. With our proven implementation approach, we ensure your project is completed on time and within budget while maximizing ROI.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+               <div class="faq-item" onclick="toggleFAQ(this)">
+                   <button class="faq-question">
+                       <span>Are security and compliance guaranteed with Power Consulting?</span>
+                       <div class="faq-arrow"></div>
+                   </button>
+                   <div class="faq-answer">
+                       <div class="faq-answer-content">
+                           Absolutely. Power Consulting adheres to the highest security standards leveraging Microsoft's enterprise-grade security infrastructure. All data transmissions are encrypted, and we provide comprehensive audit trails as well as compliance features for GDPR, SOX, and industry-specific regulations. With granular user permissions and multi-factor authentication, we ensure your sensitive data is optimally protected.
+                       </div>
+                   </div>
+               </div>
 
-<!-- Contact & Booking Section -->
-<section class="contact-booking" id="contact">
-    <div class="contact-container">
-        <div class="contact-header animate-on-scroll">
-            <h2>Ready to Transform Your Business?</h2>
-            <p>Choose the best way to get started with your automation journey. We're here to help you succeed.</p>
-        </div>
-        
-        <div class="contact-options">
-            <div class="contact-card animate-on-scroll">
-                <div class="contact-icon">📞</div>
-                <h3>Schedule a Call</h3>
-                <p>Book a free 30-minute consultation to discuss your automation needs and get personalized recommendations.</p>
-                <a href="https://calendly.com/power-consulting" class="contact-btn-primary" target="_blank">
-                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                    </svg>
-                    Book Meeting
-                </a>
-            </div>
-            
-            <div class="contact-card animate-on-scroll">
-                <div class="contact-icon">📧</div>
-                <h3>Get Instant Quote</h3>
-                <p>Fill out our quick form and receive a detailed proposal within 24 hours, tailored to your specific requirements.</p>
-                <a href="#contact-form" class="contact-btn-secondary" onclick="scrollToForm()">
-                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                    Get Quote
-                </a>
-            </div>
-        </div>
+               <div class="faq-item" onclick="toggleFAQ(this)">
+                   <button class="faq-question">
+                       <span>What support does Power Consulting provide during implementation?</span>
+                       <div class="faq-arrow"></div>
+                   </button>
+                   <div class="faq-answer">
+                       <div class="faq-answer-content">
+                           We guide you from the initial consultation to successful production deployment and beyond. Our service package includes detailed project planning, professional data analysis, customized development, comprehensive training for your team, and continuous support. With our proven implementation approach, we ensure your project is completed on time and within budget while maximizing ROI.
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-        <div class="contact-form-card animate-on-scroll" id="contact-form">
-            <div class="form-header">
-                <h3>Tell Us About Your Project</h3>
-                <p>Share your requirements and we'll create a tailored solution for you</p>
-            </div>
+   <!-- Contact & Booking Section -->
+   <section class="contact-booking" id="contact">
+       <div class="contact-container">
+           <div class="contact-header animate-on-scroll">
+               <h2>Ready to Transform Your Business?</h2>
+               <p>Choose the best way to get started with your automation journey. We're here to help you succeed.</p>
+           </div>
+           
+           <div class="contact-options">
+               <div class="contact-card animate-on-scroll">
+                   <div class="contact-icon">
+                       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                       </svg>
+                   </div>
+                   <h3>Schedule a Call</h3>
+                   <p>Book a free 30-minute consultation to discuss your automation needs and get personalized recommendations.</p>
+                   <a href="https://calendly.com/power-consulting" class="contact-btn-primary" target="_blank">
+                       <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                       </svg>
+                       Book Meeting
+                   </a>
+               </div>
+               
+               <div class="contact-card animate-on-scroll">
+                   <div class="contact-icon">
+                       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                       </svg>
+                   </div>
+                   <h3>Get Instant Quote</h3>
+                   <p>Fill out our quick form and receive a detailed proposal within 24 hours, tailored to your specific requirements.</p>
+                   <a href="#contact-form" class="contact-btn-secondary" onclick="scrollToForm()">
+                       <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                       </svg>
+                       Get Quote
+                   </a>
+               </div>
+           </div>
 
-            <div class="form-message" id="formMessage"></div>
+           <div class="contact-form-card animate-on-scroll" id="contact-form">
+               <div class="form-header">
+                   <h3>Tell Us About Your Project</h3>
+                   <p>Share your requirements and we'll create a tailored solution for you</p>
+               </div>
 
-            <form class="contact-form" id="contactForm" onsubmit="submitForm(event)">
-                <div class="form-group">
-                    <label for="firstName">Name *</label>
-                    <input type="text" id="firstName" name="firstName" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="company">Company Name *</label>
-                    <input type="text" id="company" name="company" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="formIndustry">Industry *</label>
-                    <select id="formIndustry" name="industry" required>
-                        <option value="">Select your industry</option>
-                        <option value="manufacturing">Manufacturing</option>
-                        <option value="retail">Retail & E-commerce</option>
-                        <option value="healthcare">Healthcare</option>
-                        <option value="finance">Financial Services</option>
-                        <option value="construction">Construction</option>
-                        <option value="professional">Professional Services</option>
-                        <option value="education">Education</option>
-                        <option value="technology">Technology</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                
-                <div class="form-group full-width">
-                    <label for="currentChallenges">Current Business Challenges *</label>
-                    <textarea id="currentChallenges" name="currentChallenges" placeholder="Describe the main processes you'd like to automate (e.g., manual data entry, approval workflows, reporting)" required></textarea>
-                </div>
-                
-                <div class="submit-section">
-                    <button type="submit" class="submit-btn">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
-                        </svg>
-                        Send Project Details
-                    </button>
-                    <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
-                        We'll respond within 24 hours with a personalized proposal
-                    </p>
-                </div>
-            </form>
+               <div class="form-message" id="formMessage"></div>
 
-            <div class="trust-indicators">
-                <h4 style="color: rgba(0, 0, 0, 0.9); margin-bottom: 1rem;">Why Choose Power Consulting?</h4>
-                <div class="trust-grid">
-                    <div class="trust-item">
-                        <strong>24h Response</strong>
-                        Fast turnaround on all inquiries
-                    </div>
-                    <div class="trust-item">
-                        <strong>100+ Projects</strong>
-                        Proven track record of success
-                    </div>
-                    <div class="trust-item">
-                        <strong>Microsoft Certified</strong>
-                        Official Power Platform experts
-                    </div>
-                    <div class="trust-item">
-                        <strong>Money-Back Guarantee</strong>
-                        Risk-free consultation
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+               <form class="contact-form" id="contactForm" onsubmit="submitForm(event)">
+                   <div class="form-group">
+                       <label for="firstName">Name *</label>
+                       <input type="text" id="firstName" name="firstName" required>
+                   </div>
+                   
+                   <div class="form-group">
+                       <label for="email">Email Address *</label>
+                       <input type="email" id="email" name="email" required>
+                   </div>
+                   
+                   <div class="form-group">
+                       <label for="company">Company Name *</label>
+                       <input type="text" id="company" name="company" required>
+                   </div>
+                   
+                   <div class="form-group">
+                       <label for="formIndustry">Industry *</label>
+                       <select id="formIndustry" name="industry" required>
+                           <option value="">Select your industry</option>
+                           <option value="manufacturing">Manufacturing</option>
+                           <option value="retail">Retail & E-commerce</option>
+                           <option value="healthcare">Healthcare</option>
+                           <option value="finance">Financial Services</option>
+                           <option value="construction">Construction</option>
+                           <option value="professional">Professional Services</option>
+                           <option value="education">Education</option>
+                           <option value="technology">Technology</option>
+                           <option value="other">Other</option>
+                       </select>
+                   </div>
+                   
+                   <div class="form-group full-width">
+                       <label for="currentChallenges">Current Business Challenges *</label>
+                       <textarea id="currentChallenges" name="currentChallenges" placeholder="Describe the main processes you'd like to automate (e.g., manual data entry, approval workflows, reporting)" required></textarea>
+                   </div>
+                   
+                   <div class="submit-section">
+                       <button type="submit" class="submit-btn">
+                           <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                           </svg>
+                           Send Project Details
+                       </button>
+                       <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                           We'll respond within 24 hours with a personalized proposal
+                       </p>
+                   </div>
+               </form>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-content">
-        <p>&copy; 2025 Power Consulting. All rights reserved.</p>
-        <p>Ready for the information age</p>
-    </div>
-</footer>
+               <div class="trust-indicators">
+                   <h4 style="color: rgba(0, 0, 0, 0.9); margin-bottom: 1rem;">Why Choose Power Consulting?</h4>
+                   <div class="trust-grid">
+                       <div class="trust-item">
+                           <strong>24h Response</strong>
+                           Fast turnaround on all inquiries
+                       </div>
+                       <div class="trust-item">
+                           <strong>100+ Projects</strong>
+                           Proven track record of success
+                       </div>
+                       <div class="trust-item">
+                           <strong>Microsoft Certified</strong>
+                           Official Power Platform experts
+                       </div>
+                       <div class="trust-item">
+                           <strong>Money-Back Guarantee</strong>
+                           Risk-free consultation
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-<!-- Scroll to Top Button -->
-<button class="scroll-to-top" onclick="scrollToTop()">↑</button>
+   <!-- Footer -->
+   <footer class="footer">
+       <div class="footer-content">
+           <div class="footer-links">
+               <a href="#datenschutz">Datenschutzerklärung</a>
+               <a href="#impressum">Impressum</a>
+               <a href="#agb">AGB</a>
+               <a href="#contact">Kontakt</a>
+           </div>
+           <p>&copy; 2025 Power Consulting. All rights reserved.</p>
+           <p>Ready for the information age</p>
+       </div>
+   </footer>
 
-<script>
-    // Process Automation Planner Logic
-    const processData = {
-        invoice: {
-            name: "Invoice Processing",
-            solutions: [
-                {
-                    tool: "Power Automate",
-                    icon: "🔄",
-                    description: "Automated invoice extraction from emails, OCR processing, and approval workflows",
-                    benefit: "Reduce processing time by 80%"
-                },
-                {
-                    tool: "Power Apps",
-                    icon: "📱",
-                    description: "Mobile app for managers to approve invoices on-the-go with photo capture",
-                    benefit: "Faster approvals anywhere"
-                }
-            ]
-        },
-        hr: {
-            name: "HR & Onboarding",
-            solutions: [
-                {
-                    tool: "Power Apps",
-                    icon: "👥",
-                    description: "Employee self-service portal for leave requests, expense claims, and document updates",
-                    benefit: "Reduce HR admin by 60%"
-                },
-                {
-                    tool: "Power Automate",
-                    icon: "📋",
-                    description: "Automated onboarding workflows with task assignments and progress tracking",
-                    benefit: "Streamlined new hire experience"
-                }
-            ]
-        },
-        inventory: {
-            name: "Inventory Management",
-            solutions: [
-                {
-                    tool: "Power Apps",
-                    icon: "📦",
-                    description: "Real-time inventory tracking with barcode scanning and automated reorder points",
-                    benefit: "Prevent stockouts & overstock"
-                },
-                {
-                    tool: "Power Automate",
-                    icon: "🔔",
-                    description: "Automated supplier notifications and purchase order generation",
-                    benefit: "Seamless supply chain flow"
-                }
-            ]
-        },
-        sales: {
-            name: "Sales Pipeline",
-            solutions: [
-                {
-                    tool: "Power Apps",
-                    icon: "💼",
-                    description: "CRM app with lead scoring, opportunity tracking, and customer communication history",
-                    benefit: "Increase conversion rates"
-                },
-                {
-                    tool: "Power Automate",
-                    icon: "📧",
-                    description: "Automated follow-up sequences and quote generation based on customer interactions",
-                    benefit: "Never miss a follow-up"
-                }
-            ]
-        },
-        reporting: {
-            name: "Data & Reporting",
-            solutions: [
-                {
-                    tool: "Power BI",
-                    icon: "📈",
-                    description: "Automated dashboards connecting all your data sources with real-time insights",
-                    benefit: "Save 10+ hours weekly on reports"
-                },
-                {
-                    tool: "Power Automate",
-                    icon: "📅",
-                    description: "Scheduled report distribution to stakeholders with customized content",
-                    benefit: "Automated delivery & insights"
-                }
-            ]
-        },
-        compliance: {
-            name: "Compliance & Auditing",
-            solutions: [
-                {
-                    tool: "Power Apps",
-                    icon: "🛡️",
-                    description: "Digital audit trail system with document version control and approval chains",
-                    benefit: "100% audit readiness"
-                },
-                {
-                    tool: "Power Automate",
-                    icon: "⚠️",
-                    description: "Automated compliance monitoring with alerts for regulatory deadlines",
-                    benefit: "Never miss compliance dates"
-                }
-            ]
-        }
-    };
+   <!-- Scroll to Top Button -->
+   <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
 
-    let selectedProcesses = new Set();
+   <script>
+       // Cookie Banner Management
+       function showCookieBanner() {
+           const banner = document.getElementById('cookieBanner');
+           const hasConsent = localStorage.getItem('cookieConsent');
+           
+           if (!hasConsent) {
+               setTimeout(() => {
+                   banner.classList.add('show');
+               }, 2000);
+           }
+       }
 
-    function initProcessPlanner() {
-        // Add click handlers to process cards
-        document.querySelectorAll('.process-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const process = this.dataset.process;
-                
-                if (selectedProcesses.has(process)) {
-                    selectedProcesses.delete(process);
-                    this.classList.remove('selected');
-                } else {
-                    selectedProcesses.add(process);
-                    this.classList.add('selected');
-                }
-                
-                updateRecommendations();
-            });
-        });
+       function acceptCookies() {
+           localStorage.setItem('cookieConsent', 'accepted');
+           hideCookieBanner();
+           // Initialize analytics or other tracking here
+           console.log('Cookies accepted');
+       }
 
-        // Add change handlers to dropdowns
-        ['industry', 'companySize', 'currentTools', 'urgency'].forEach(id => {
-            const element = document.getElementById(id);
-            if (element) {
-                element.addEventListener('change', updateRecommendations);
-            }
-        });
-    }
+       function declineCookies() {
+           localStorage.setItem('cookieConsent', 'declined');
+           hideCookieBanner();
+           console.log('Cookies declined');
+       }
 
-    function updateRecommendations() {
-        const recommendations = document.getElementById('recommendations');
-        const solutionCards = document.getElementById('solutionCards');
-        
-        if (selectedProcesses.size === 0) {
-            recommendations.classList.remove('visible');
-            return;
-        }
+       function hideCookieBanner() {
+           const banner = document.getElementById('cookieBanner');
+           banner.classList.remove('show');
+       }
 
-        // Get form values for personalization
-        const industry = document.getElementById('industry').value;
-        const companySize = document.getElementById('companySize').value;
-        const currentTools = document.getElementById('currentTools').value;
-        const urgency = document.getElementById('urgency').value;
+       // Process Automation Planner Logic
+       const processData = {
+           invoice: {
+               name: "Invoice Processing",
+               solutions: [
+                   {
+                       tool: "Power Automate",
+                       icon: "🔄",
+                       description: "Automated invoice extraction from emails, OCR processing, and approval workflows",
+                       benefit: "Reduce processing time by 80%"
+                   },
+                   {
+                       tool: "Power Apps",
+                       icon: "📱",
+                       description: "Mobile app for managers to approve invoices on-the-go with photo capture",
+                       benefit: "Faster approvals anywhere"
+                   }
+               ]
+           },
+           hr: {
+               name: "HR & Onboarding",
+               solutions: [
+                   {
+                       tool: "Power Apps",
+                       icon: "👥",
+                       description: "Employee self-service portal for leave requests, expense claims, and document updates",
+                       benefit: "Reduce HR admin by 60%"
+                   },
+                   {
+                       tool: "Power Automate",
+                       icon: "📋",
+                       description: "Automated onboarding workflows with task assignments and progress tracking",
+                       benefit: "Streamlined new hire experience"
+                   }
+               ]
+           },
+           inventory: {
+               name: "Inventory Management",
+               solutions: [
+                   {
+                       tool: "Power Apps",
+                       icon: "📦",
+                       description: "Real-time inventory tracking with barcode scanning and automated reorder points",
+                       benefit: "Prevent stockouts & overstock"
+                   },
+                   {
+                       tool: "Power Automate",
+                       icon: "🔔",
+                       description: "Automated supplier notifications and purchase order generation",
+                       benefit: "Seamless supply chain flow"
+                   }
+               ]
+           },
+           sales: {
+               name: "Sales Pipeline",
+               solutions: [
+                   {
+                       tool: "Power Apps",
+                       icon: "💼",
+                       description: "CRM app with lead scoring, opportunity tracking, and customer communication history",
+                       benefit: "Increase conversion rates"
+                   },
+                   {
+                       tool: "Power Automate",
+                       icon: "📧",
+                       description: "Automated follow-up sequences and quote generation based on customer interactions",
+                       benefit: "Never miss a follow-up"
+                   }
+               ]
+           },
+           reporting: {
+               name: "Data & Reporting",
+               solutions: [
+                   {
+                       tool: "Power BI",
+                       icon: "📈",
+                       description: "Automated dashboards connecting all your data sources with real-time insights",
+                       benefit: "Save 10+ hours weekly on reports"
+                   },
+                   {
+                       tool: "Power Automate",
+                       icon: "📅",
+                       description: "Scheduled report distribution to stakeholders with customized content",
+                       benefit: "Automated delivery & insights"
+                   }
+               ]
+           },
+           compliance: {
+               name: "Compliance & Auditing",
+               solutions: [
+                   {
+                       tool: "Power Apps",
+                       icon: "🛡️",
+                       description: "Digital audit trail system with document version control and approval chains",
+                       benefit: "100% audit readiness"
+                   },
+                   {
+                       tool: "Power Automate",
+                       icon: "⚠️",
+                       description: "Automated compliance monitoring with alerts for regulatory deadlines",
+                       benefit: "Never miss compliance dates"
+                   }
+               ]
+           }
+       };
 
-        // Generate solutions
-        let solutionsHTML = '';
-        selectedProcesses.forEach(processKey => {
-            const process = processData[processKey];
-            if (process) {
-                process.solutions.forEach(solution => {
-                    solutionsHTML += `
-                        <div class="solution-card">
-                            <h4>
-                                <span class="icon">${solution.icon}</span>
-                                ${solution.tool} for ${process.name}
-                            </h4>
-                            <p>${solution.description}</p>
-                            <div class="benefit">${solution.benefit}</div>
-                        </div>
-                    `;
-                });
-            }
-        });
+       let selectedProcesses = new Set();
 
-        // Add personalized recommendations based on company info
-        if (companySize === 'small') {
-            solutionsHTML += `
-                <div class="solution-card">
-                    <h4><span class="icon">🚀</span>Quick Start Package</h4>
-                    <p>For smaller teams, we recommend starting with 1-2 key processes to maximize immediate impact and learning.</p>
-                    <div class="benefit">Faster implementation & ROI</div>
-                </div>
-            `;
-        }
+       function initProcessPlanner() {
+           // Add click handlers to process cards
+           document.querySelectorAll('.process-card').forEach(card => {
+               card.addEventListener('click', function() {
+                   const process = this.dataset.process;
+                   
+                   if (selectedProcesses.has(process)) {
+                       selectedProcesses.delete(process);
+                       this.classList.remove('selected');
+                   } else {
+                       selectedProcesses.add(process);
+                       this.classList.add('selected');
+                   }
+                   
+                   updateRecommendations();
+               });
+           });
 
-        if (urgency === 'immediate') {
-            solutionsHTML += `
-                <div class="solution-card">
-                    <h4><span class="icon">⚡</span>Rapid Deployment</h4>
-                    <p>Pre-built templates and accelerated implementation timeline to get you live within 2-4 weeks.</p>
-                    <div class="benefit">Live in under 1 month</div>
-                </div>
-            `;
-        }
+           // Add change handlers to dropdowns
+           ['industry', 'companySize', 'currentTools', 'urgency'].forEach(id => {
+               const element = document.getElementById(id);
+               if (element) {
+                   element.addEventListener('change', updateRecommendations);
+               }
+           });
+       }
 
-        solutionCards.innerHTML = solutionsHTML;
-        recommendations.classList.add('visible');
-    }
+       function updateRecommendations() {
+           const recommendations = document.getElementById('recommendations');
+           const solutionCards = document.getElementById('solutionCards');
+           
+           if (selectedProcesses.size === 0) {
+               recommendations.classList.remove('visible');
+               return;
+           }
 
-    // Animated Word Cycling for Hero
-    function initAnimatedHero() {
-        const phrases = [
-            "through automation", 
-            "with efficiency", 
-            "through innovation", 
-            "with smart solutions", 
-            "through digital transformation"
-        ];
-        
-        let currentIndex = 0;
-        const animatedWord = document.getElementById('animatedWord');
-        
-        if (!animatedWord) return;
-        
-        function animatePhrase() {
-            // Animate out current phrase
-            animatedWord.style.transform = 'translateX(-50%) translateY(-100%)';
-            animatedWord.style.opacity = '0';
-            
-            setTimeout(() => {
-                // Change phrase
-                currentIndex = (currentIndex + 1) % phrases.length;
-                animatedWord.textContent = phrases[currentIndex];
-                
-                // Reset position and animate in
-                animatedWord.style.transform = 'translateX(-50%) translateY(100%)';
-                
-                setTimeout(() => {
-                    animatedWord.style.transform = 'translateX(-50%) translateY(0)';
-                    animatedWord.style.opacity = '1';
-                }, 50);
-            }, 300);
-        }
-        
-        // Set initial state
-        animatedWord.style.transition = 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-        animatedWord.style.transform = 'translateX(-50%) translateY(0)';
-        animatedWord.style.opacity = '1';
-        
-        // Start animation cycle
-        setInterval(animatePhrase, 4000);
-    }
+           // Get form values for personalization
+           const industry = document.getElementById('industry').value;
+           const companySize = document.getElementById('companySize').value;
+           const currentTools = document.getElementById('currentTools').value;
+           const urgency = document.getElementById('urgency').value;
 
-    // FAQ Toggle Function
-    function toggleFAQ(item) {
-        const isActive = item.classList.contains('active');
-        
-        // Close all FAQ items
-        document.querySelectorAll('.faq-item').forEach(faq => {
-            faq.classList.remove('active');
-        });
-        
-        // Open clicked item if it wasn't active
-        if (!isActive) {
-            item.classList.add('active');
-        }
-    }
+           // Generate solutions
+           let solutionsHTML = '';
+           selectedProcesses.forEach(processKey => {
+               const process = processData[processKey];
+               if (process) {
+                   process.solutions.forEach(solution => {
+                       solutionsHTML += `
+                           <div class="solution-card">
+                               <h4>
+                                   <span class="icon">${solution.icon}</span>
+                                   ${solution.tool} for ${process.name}
+                               </h4>
+                               <p>${solution.description}</p>
+                               <div class="benefit">${solution.benefit}</div>
+                           </div>
+                       `;
+                   });
+               }
+           });
 
-    // Contact Form Submission
-    function submitForm(event) {
-        event.preventDefault();
-        
-        const formData = new FormData(event.target);
-        const data = Object.fromEntries(formData.entries());
-        
-        // Show loading state
-        const submitBtn = document.querySelector('.submit-btn');
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<div style="width: 20px; height: 20px; border: 2px solid white; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div> Sending...';
-        submitBtn.disabled = true;
+           // Add personalized recommendations based on company info
+           if (companySize === 'small') {
+               solutionsHTML += `
+                   <div class="solution-card">
+                       <h4><span class="icon">🚀</span>Quick Start Package</h4>
+                       <p>For smaller teams, we recommend starting with 1-2 key processes to maximize immediate impact and learning.</p>
+                       <div class="benefit">Faster implementation & ROI</div>
+                   </div>
+               `;
+           }
 
-        // Add spinning animation
-        const style = document.createElement('style');
-        style.textContent = '@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }';
-        document.head.appendChild(style);
-        
-        // Simulate form submission (replace with actual form handling)
-        setTimeout(() => {
-            showFormMessage('Thank you! We\'ve received your project details and will respond within 24 hours with a personalized proposal.', 'success');
-            
-            // Reset form
-            event.target.reset();
-            
-            // Reset button
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-            
-            // Optional: Send to your backend or email service
-            console.log('Form submitted:', data);
-            
-            // Remove the style element
-            document.head.removeChild(style);
-        }, 2000);
-    }
+           if (urgency === 'immediate') {
+               solutionsHTML += `
+                   <div class="solution-card">
+                       <h4><span class="icon">⚡</span>Rapid Deployment</h4>
+                       <p>Pre-built templates and accelerated implementation timeline to get you live within 2-4 weeks.</p>
+                       <div class="benefit">Live in under 1 month</div>
+                   </div>
+               `;
+           }
 
-    function showFormMessage(message, type) {
-        const messageElement = document.getElementById('formMessage');
-        messageElement.textContent = message;
-        messageElement.className = `form-message ${type}`;
-        messageElement.style.display = 'block';
-        
-        // Scroll to message
-        messageElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        
-        // Hide after 10 seconds
-        setTimeout(() => {
-            messageElement.style.display = 'none';
-        }, 10000);
-    }
+           solutionCards.innerHTML = solutionsHTML;
+           recommendations.classList.add('visible');
+       }
 
-    function scrollToForm() {
-        document.getElementById('contact-form').scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-        });
-    }
+       // Animated Word Cycling for Hero
+       function initAnimatedHero() {
+           const phrases = [
+               "through automation", 
+               "with efficiency", 
+               "through innovation", 
+               "with smart solutions", 
+               "through digital transformation"
+           ];
+           
+           let currentIndex = 0;
+           const animatedWord = document.getElementById('animatedWord');
+           
+           if (!animatedWord) return;
+           
+           function animatePhrase() {
+               // Animate out current phrase
+               animatedWord.style.transform = 'translateX(-50%) translateY(-100%)';
+               animatedWord.style.opacity = '0';
+               
+               setTimeout(() => {
+                   // Change phrase
+                   currentIndex = (currentIndex + 1) % phrases.length;
+                   animatedWord.textContent = phrases[currentIndex];
+                   
+                   // Reset position and animate in
+                   animatedWord.style.transform = 'translateX(-50%) translateY(100%)';
+                   
+                   setTimeout(() => {
+                       animatedWord.style.transform = 'translateX(-50%) translateY(0)';
+                       animatedWord.style.opacity = '1';
+                   }, 50);
+               }, 300);
+           }
+           
+           // Set initial state
+           animatedWord.style.transition = 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+           animatedWord.style.transform = 'translateX(-50%) translateY(0)';
+           animatedWord.style.opacity = '1';
+           
+           // Start animation cycle
+           setInterval(animatePhrase, 4000);
+       }
 
-    // Mobile Menu Toggle
-    function toggleMobileMenu() {
-        const navMenu = document.querySelector('.nav-menu');
-        const toggle = document.querySelector('.mobile-menu-toggle');
-        
-        navMenu.classList.toggle('active');
-        toggle.classList.toggle('active');
-        
-        // Animate hamburger
-        const spans = toggle.querySelectorAll('span');
-        if (toggle.classList.contains('active')) {
-            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-            spans[1].style.opacity = '0';
-            spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-        } else {
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
-        }
-    }
+       // FAQ Toggle Function
+       function toggleFAQ(item) {
+           const isActive = item.classList.contains('active');
+           
+           // Close all FAQ items
+           document.querySelectorAll('.faq-item').forEach(faq => {
+               faq.classList.remove('active');
+           });
+           
+           // Open clicked item if it wasn't active
+           if (!isActive) {
+               item.classList.add('active');
+           }
+       }
 
-    // Smooth Scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const headerOffset = 80;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+       // Contact Form Submission
+       function submitForm(event) {
+           event.preventDefault();
+           
+           const formData = new FormData(event.target);
+           const data = Object.fromEntries(formData.entries());
+           
+           // Show loading state
+           const submitBtn = document.querySelector('.submit-btn');
+           const originalText = submitBtn.innerHTML;
+           submitBtn.innerHTML = '<div style="width: 20px; height: 20px; border: 2px solid white; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div> Sending...';
+           submitBtn.disabled = true;
 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+           // Add spinning animation
+           const style = document.createElement('style');
+           style.textContent = '@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }';
+           document.head.appendChild(style);
+           
+           // Simulate form submission (replace with actual form handling)
+           setTimeout(() => {
+               showFormMessage('Thank you! We\'ve received your project details and will respond within 24 hours with a personalized proposal.', 'success');
+               
+               // Reset form
+               event.target.reset();
+               
+               // Reset button
+               submitBtn.innerHTML = originalText;
+               submitBtn.disabled = false;
+               
+               // Optional: Send to your backend or email service
+               console.log('Form submitted:', data);
+               
+               // Remove the style element
+               document.head.removeChild(style);
+           }, 2000);
+       }
 
-    // Scroll Animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+       function showFormMessage(message, type) {
+           const messageElement = document.getElementById('formMessage');
+           messageElement.textContent = message;
+           messageElement.className = `form-message ${type}`;
+           messageElement.style.display = 'block';
+           
+           // Scroll to message
+           messageElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+           
+           // Hide after 10 seconds
+           setTimeout(() => {
+               messageElement.style.display = 'none';
+           }, 10000);
+       }
 
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                
-                // Add staggered animation for grid items
-                if (entry.target.classList.contains('service-card') || 
-                    entry.target.classList.contains('benefit-item') ||
-                    entry.target.classList.contains('contact-card')) {
-                    const siblings = entry.target.parentElement.children;
-                    const index = Array.from(siblings).indexOf(entry.target);
-                    entry.target.style.transitionDelay = `${index * 0.1}s`;
-                }
-            }
-        });
-    }, observerOptions);
+       function scrollToForm() {
+           document.getElementById('contact-form').scrollIntoView({ 
+               behavior: 'smooth',
+               block: 'start'
+           });
+       }
 
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        observer.observe(el);
-    });
+       // Mobile Menu Toggle
+       function toggleMobileMenu() {
+           const navMenu = document.querySelector('.nav-menu');
+           const toggle = document.querySelector('.mobile-menu-toggle');
+           
+           navMenu.classList.toggle('active');
+           toggle.classList.toggle('active');
+           
+           // Animate hamburger
+           const spans = toggle.querySelectorAll('span');
+           if (toggle.classList.contains('active')) {
+               spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+               spans[1].style.opacity = '0';
+               spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+           } else {
+               spans[0].style.transform = 'none';
+               spans[1].style.opacity = '1';
+               spans[2].style.transform = 'none';
+           }
+       }
 
-    // Header Scroll Effect
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('.header');
-        const scrollTop = window.pageYOffset;
-        
-        // Header appearance
-        if (scrollTop > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.9)';
-            header.style.borderBottom = '1px solid rgba(0, 0, 0, 0.1)';
-        } else {
-            header.style.background = 'rgba(255, 255, 255, 0.8)';
-            header.style.borderBottom = '1px solid var(--border-color)';
-        }
+       // Smooth Scrolling
+       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+           anchor.addEventListener('click', function (e) {
+               e.preventDefault();
+               const target = document.querySelector(this.getAttribute('href'));
+               if (target) {
+                   const headerOffset = 80;
+                   const elementPosition = target.getBoundingClientRect().top;
+                   const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-        // Hide/show header on scroll
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            header.style.transform = 'translateY(0)';
-        }
-        lastScrollTop = scrollTop;
+                   window.scrollTo({
+                       top: offsetPosition,
+                       behavior: 'smooth'
+                   });
+               }
+           });
+       });
 
-        // Scroll to top button
-        const scrollBtn = document.querySelector('.scroll-to-top');
-        if (scrollTop > 500) {
-            scrollBtn.classList.add('visible');
-        } else {
-            scrollBtn.classList.remove('visible');
-        }
-    }, { passive: true });
+       // Scroll Animations
+       const observerOptions = {
+           threshold: 0.1,
+           rootMargin: '0px 0px -50px 0px'
+       };
 
-    // Scroll to Top Function
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
+       const observer = new IntersectionObserver(function(entries) {
+           entries.forEach(entry => {
+               if (entry.isIntersecting) {
+                   entry.target.classList.add('visible');
+                   
+                   // Add staggered animation for grid items
+                   if (entry.target.classList.contains('service-card') || 
+                       entry.target.classList.contains('benefit-item') ||
+                       entry.target.classList.contains('contact-card')) {
+                       const siblings = entry.target.parentElement.children;
+                       const index = Array.from(siblings).indexOf(entry.target);
+                       entry.target.style.transitionDelay = `${index * 0.1}s`;
+                   }
+               }
+           });
+       }, observerOptions);
 
-    // Initialize everything
-    document.addEventListener('DOMContentLoaded', function() {
-        initProcessPlanner();
-        initAnimatedHero();
-    });
+       document.querySelectorAll('.animate-on-scroll').forEach(el => {
+           observer.observe(el);
+       });
 
-    // Page Loading Animation
-    window.addEventListener('load', function() {
-        document.body.classList.add('loaded');
-        
-        // Trigger initial animations
-        setTimeout(() => {
-            document.querySelectorAll('.hero .animate-on-scroll').forEach(el => {
-                el.classList.add('visible');
-            });
-        }, 200);
-    });
+       // Header Scroll Effect
+       let lastScrollTop = 0;
+       window.addEventListener('scroll', () => {
+           const header = document.querySelector('.header');
+           const scrollTop = window.pageYOffset;
+           
+           // Header appearance
+           if (scrollTop > 100) {
+               header.style.background = 'rgba(255, 255, 255, 0.9)';
+               header.style.borderBottom = '1px solid rgba(0, 0, 0, 0.1)';
+           } else {
+               header.style.background = 'rgba(255, 255, 255, 0.8)';
+               header.style.borderBottom = '1px solid var(--border-color)';
+           }
 
-    // Keyboard navigation
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            const mobileMenu = document.querySelector('.nav-menu.active');
-            if (mobileMenu) toggleMobileMenu();
-        }
-    });
-</script>
+           // Hide/show header on scroll
+           if (scrollTop > lastScrollTop && scrollTop > 100) {
+               header.style.transform = 'translateY(-100%)';
+           } else {
+               header.style.transform = 'translateY(0)';
+           }
+           lastScrollTop = scrollTop;
 
-<!-- Schema.org structured data for SEO -->
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Power Consulting",
-    "description": "Transforming business with low code automation using Microsoft Power Platform",
-    "url": "https://power-consulting.com",
-    "logo": "https://power-consulting.com/logo.png",
-    "founder": {
-        "@type": "Person",
-        "name": "Paul Stierle"
-    },
-    "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "DE"
-    },
-    "serviceArea": {
-        "@type": "Place",
-        "name": "Global"
-    },
-    "services": [
-        "Low Code Automation Consulting",
-        "Microsoft Power Platform Development", 
-        "Business Process Automation",
-        "Power Platform Training"
-    ],
-    "offers": {
-        "@type": "Service",
-        "name": "Process Automation Planner",
-        "description": "Interactive tool to get personalized automation recommendations"
-    }
-}
-</script>
+           // Scroll to top button
+           const scrollBtn = document.querySelector('.scroll-to-top');
+           if (scrollTop > 500) {
+               scrollBtn.classList.add('visible');
+           } else {
+               scrollBtn.classList.remove('visible');
+           }
+       }, { passive: true });
+
+       // Scroll to Top Function
+       function scrollToTop() {
+           window.scrollTo({
+               top: 0,
+               behavior: 'smooth'
+           });
+       }
+
+       // Initialize everything
+       document.addEventListener('DOMContentLoaded', function() {
+           initProcessPlanner();
+           initAnimatedHero();
+           showCookieBanner();
+       });
+
+       // Page Loading Animation
+       window.addEventListener('load', function() {
+           document.body.classList.add('loaded');
+           
+           // Trigger initial animations
+           setTimeout(() => {
+               document.querySelectorAll('.hero .animate-on-scroll').forEach(el => {
+                   el.classList.add('visible');
+               });
+           }, 200);
+       });
+
+       // Keyboard navigation
+       document.addEventListener('keydown', function(e) {
+           if (e.key === 'Escape') {
+               const mobileMenu = document.querySelector('.nav-menu.active');
+               if (mobileMenu) toggleMobileMenu();
+               
+               const cookieBanner = document.querySelector('.cookie-banner.show');
+               if (cookieBanner) hideCookieBanner();
+           }
+       });
+   </script>
+
+   <!-- Schema.org structured data for SEO -->
+   <script type="application/ld+json">
+   {
+       "@context": "https://schema.org",
+       "@type": "Organization",
+       "name": "Power Consulting",
+       "description": "Transforming business with low code automation using Microsoft Power Platform",
+       "url": "https://power-consulting.com",
+       "logo": "https://power-consulting.com/images/logo.png",
+       "founder": {
+           "@type": "Person",
+           "name": "Paul Stierle"
+       },
+       "address": {
+           "@type": "PostalAddress",
+           "addressCountry": "DE"
+       },
+       "serviceArea": {
+           "@type": "Place",
+           "name": "Global"
+       },
+       "services": [
+           "Low Code Automation Consulting",
+           "Microsoft Power Platform Development", 
+"Business Process Automation",
+           "Power Platform Training"
+       ],
+       "offers": {
+           "@type": "Service",
+           "name": "Process Automation Planner",
+           "description": "Interactive tool to get personalized automation recommendations"
+       }
+   }
+   </script>
 </body>
 </html>
